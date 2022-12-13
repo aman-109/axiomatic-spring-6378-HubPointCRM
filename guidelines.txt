@@ -1,0 +1,15 @@
+
+Project name - HubPoint.com  
+IA- Aakash
+Team Lead - Aman Mate
+
+Ground Rules-
+
+1.Stick to node-18v for smooth coding
+2.Whenever there's new dependencies get installed, informed memebers to install them (npm install)
+3.Before starting to code everytime make git pull
+4.Always work in the branches, each day their should be a new branch 
+5.Before pushing your code make sure you copy the content(src) to avoid mishappening
+6.Always use comments while writing the code
+7.Use env for private keys and credentials for security
+7.Happy coding !
