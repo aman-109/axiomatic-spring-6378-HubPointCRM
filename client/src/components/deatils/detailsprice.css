@@ -1,0 +1,28 @@
+.detailsprice{
+    width:100%;
+    height: auto;
+    background: rgb(236, 237, 238);
+    padding: 20px 0;
+    border: 1px solid;
+}
+.price-main{
+    width:90%;
+    margin:auto;
+    height:400px;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    text-align:center;
+}
+.details-price1{
+    width:30%;
+    height:100%;
+    justify-content:space-around;
+    align-items:center;
+}
+.details-price1a{
+    height:40%;
+    padding:20px 20px;
+    color: white;
+    background: linear-gradient(90deg, rgb(97, 171, 228) 51%, rgba(61,141,235,1) 63%);
+}

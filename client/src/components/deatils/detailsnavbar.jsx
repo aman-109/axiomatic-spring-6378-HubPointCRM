@@ -7,7 +7,7 @@ import {Link} from "react-scroll"
 const Detailsnavbar = () => {
   return (
     <div className='detailsnavbar'>
-       <div className='navbar-left' style={{width:"50%"}}>
+       <div className='navbar-left'>
           <div className='navbar-left1'>
           
           <div style={{width:"15%"}}>
