@@ -1,0 +1,45 @@
+.mainhead{
+    font-size:40px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.description{
+    width: 60%;
+    margin: auto;
+    text-align: justify;
+    margin-top: 3%;
+}
+.buttons{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+.getbutton{
+    margin-right: 2%;   
+    width: 200px;
+    padding: 1%;
+   color-scheme: #ff5c35;
+    color: white;
+       border-radius: 0px;
+}
+.demobutton{
+    width: 200px;
+    padding: 1%;
+    border-radius: 0px;
+    border: 1px solid #ff5c35;
+    color:  #ff5c35;;
+}
+@media screen and (max-width:1040px) {
+    .buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .demobutton{
+        margin-top: 2%;
+        margin-left: -10px;
+    }
+}

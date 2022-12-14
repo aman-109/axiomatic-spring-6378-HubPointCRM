@@ -1,0 +1,100 @@
+.statsmainbox{
+    width: 100%;
+    border: 1px solid;
+    /* height: 100vh; */
+    margin-top: 5%;
+    padding: 5%;
+    background-image: linear-gradient(45deg,#0fbfbf,#4fb06d);
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width:80%;
+    margin: auto;
+     border-left: 0;
+    border-right: 0;
+}
+.griditem{
+    border: 2px solid white;
+    padding: 2rem;
+    border-top: none;
+    border-bottom: 0px;
+    margin-top: 5%;
+}
+.icons{
+    font-size: 30px;
+    margin: auto;
+    color: white;
+}
+.griditem1{
+    border: 2px solid white;
+    padding: 2rem;
+    border-bottom: 0px;
+
+}
+.heading{
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-right: -50px;
+}
+.plussign{
+    font-size: 25px;
+    margin: auto;
+    text-align: center;
+    color: white;
+}
+.flex{
+    display: flex;
+    justify-content: center;
+   
+}
+.mainheading{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 2%;
+    color: white;
+}
+.maindesc{
+    width: 60%;
+    color: white;
+    margin: auto;
+    margin-top: 3%;
+}
+.textbottom{
+    color: white;
+    text-align: center;
+    font-weight: 700;
+}
+.heading70{
+    color: white;
+}
+@media screen and (max-width:1040px) {
+        .mainheading{
+            text-align: center;
+            width: 60%;
+            margin: auto;
+        }
+        .maindesc{
+            text-align: center;
+            width: 60%;
+            margin: auto;
+        }
+        .grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width:80%;
+        margin: auto;
+        gap: 30px;
+        }
+}
+@media screen and (max-width:450px) {
+         .grid{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        width:80%;
+        margin: auto;
+        gap: 30px;
+        }
+}
