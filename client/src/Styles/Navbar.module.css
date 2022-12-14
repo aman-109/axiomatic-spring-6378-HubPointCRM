@@ -1,0 +1,136 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+.topHeader{
+    display: flex;
+    justify-content: space-around;
+    font-size: 13px;
+    align-items: center;
+    padding: 2%;
+    /* margin-bottom: 2%; */
+    /* margin-top: 2%; */
+    
+}
+.leftSide{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.rightSide{
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         gap: 20px;
+}
+.leftSideFlex{
+    justify-content: space-evenly;
+}
+.logoBox{
+    /* border: 1px solid; */
+    width: 30%;
+    padding: 1%;
+    margin-left:-12%
+}
+.softwareMenu{
+    padding: 5%;
+    overflow: scroll;
+   
+}
+.softwareMenuButton{
+        padding: 3%;
+        margin-top: 2%;
+       margin-right: 2%;
+       border: 1px solid aliceblue;
+}
+.menuSoftwareTopThreeFlex{
+    justify-content: space-evenly;
+    gap: 5%;
+    align-items: center;
+      margin-top: 5%;
+}
+.menuSoftwareTopThreeFlex div{
+    text-align: center;
+    padding: 2%;
+    background-color: aliceblue;
+}
+.menuSoftwareTopThreeFlex p{
+   
+    text-align: justify;
+    padding: 5px;
+}
+.menuSoftwareTopThreeFlex h2{
+    text-align: justify;
+}
+.softwareMenuIcons{
+    color:#ee9521;
+    font-size: 20px;
+    margin-right: 1%;
+}
+.menuSoftwareBottomTwoFlex{
+    justify-content: space-evenly;
+    margin-top: 5%;
+    gap: 10%;
+    align-items: center;
+    
+}
+.menuSoftwareBottomTwoFlex div{
+    text-align: center;
+    padding: 2%;
+    background-color: aliceblue;
+}
+.menuSoftwareBottomTwoFlex p{
+   
+    text-align: justify;
+    padding: 5px;
+}
+.appmarketPlaceButton{
+    width: 100%;
+    margin-top: 5%;
+    padding: 2%;
+    border-radius: 0%;
+}
+.resoursesLeftSide{
+    padding:20px;
+}
+.resoursesRightSide{
+    padding:20px;
+}
+.education{
+    padding: 10px;
+}
+.whyhub{
+    padding:10px
+}
+.user{
+    padding:10px;
+}
+.services{
+    padding:10px;
+}
+.demobutton{
+    background-color:#ff5c35;
+    color-scheme:#ff5c35;
+}
+.bottomnavbar{
+    display:flex;
+    top: 0;
+    justify-content:space-between;
+    border:1px solid;
+    padding:20px;
+    /* margin-top:0%; */
+    position:static;
+    width:100%;
+    /* background-color: white; */
+}
+.bottomNavbarleft{
+    display:flex;
+      justify-content:space-evenly;
+      padding-left:2%;
+
+}
+.hamberger{
+    display: none;
+}
