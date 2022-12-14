@@ -1,6 +1,10 @@
 const User = require("../model/user.model");
+const Blacklist = require("../model/blacklist.model");
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
+
+const token_secret = process.env.TOKEN_KEY;
+const refreshToken_secret = process.env.REFRESHTOKEN_KEY;
 
 //Helper functions
 const createUser = async (data) => {
@@ -76,4 +80,63 @@ const loginUser = async (req, res) => {
   }
 };
 
-module.exports = { getUser, signupUser, loginUser };
+//3. Logout callback
+const logoutUser = async (req, res) => {
+  let token = req.headers.authorization;
+  try {
+    let tok = await Blacklist.create({ token });
+    res
+      .status(200)
+      .send({ status: true, message: "user logouted successfully" });
+  } catch (e) {
+    res.status(401).send({ message: e.message });
+  }
+};
+
+//4. Refresh Token callback
+const getRefreshToekn = async (req, res) => {
+  let token = req.headers.authorization;
+  let sp = await Blacklist.findOne({ token });
+  if (sp) {
+    return res.status(401).send({ status: false, message: "user logouted" });
+  }
+  try {
+    let veri = jwt.verify(token, refreshToken_secret);
+    if (veri) {
+      let user = await findUser({ email: veri.email });
+      if (user) {
+        let new_token = jwt.sign(
+          { email: user.email, role: user.role, name: user.name },
+          token_secret,
+          {
+            expiresIn: "7 day",
+          }
+        );
+
+        return res.status(200).send({
+          status: true,
+          token: new_token,
+          refreshToken: token,
+        });
+      } else {
+        return res.status(401).send({
+          status: false,
+          message: "user not found",
+        });
+      }
+    }
+  } catch (e) {
+    return res.status(401).send({
+      status: false,
+      message: e.message,
+    });
+  }
+};
+
+module.exports = {
+  getUser,
+  signupUser,
+  loginUser,
+  logoutUser,
+  getRefreshToekn,
+};
