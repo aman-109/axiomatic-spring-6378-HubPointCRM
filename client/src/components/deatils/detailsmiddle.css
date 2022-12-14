@@ -1,7 +1,6 @@
 .detailsmiddle{
     width:100%;
     padding: 50px;
-    border: 1px solid;
     height: auto;
     display: flex;
     justify-content: space-between;
@@ -76,7 +75,7 @@
 .features1b{
  width:30%;
 }
-@media only screen and (max-width: 760px) and (min-width: 500px){
+@media only screen and (max-width: 760px) and (min-width:390px){
     .detailsmiddle{
         width:100%;
         padding: 50px;
