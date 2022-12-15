@@ -12,7 +12,9 @@ const users = new mongoose.Schema({
   industry_name: { type: String },
   job_role: { type: String },
   peoples_inCompany: { type: Number },
-  //   purchased_product: [{comment_id:{ type: mongoose.Schema.Types.ObjectId, ref: ""} }] // Refrence Pending
+  purchased_product: [
+    { product_id: { type: mongoose.Schema.Types.ObjectId, ref: "product" } },
+  ],
 });
 
 const User = mongoose.model("user", users);
