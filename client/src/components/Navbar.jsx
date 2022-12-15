@@ -57,7 +57,7 @@ const Navbar = () => {
                             </PopoverContent>
                     </Popover>
                 </Flex>
-                <Flex  alignItems={'center'}><Stack direction='row-reverse'><Switch marginRight={'10px'}/></Stack><Text>High Contrast</Text></Flex>
+                <Flex className={styles.contrastFlex}  alignItems={'center'}><Stack direction='row-reverse'><Switch marginRight={'10px'}/></Stack><Text>High Contrast</Text></Flex>
                 <Flex alignItems={'center'}><RiUser3Fill fontSize={'20px'} marginRight='10px'/><Text> Contact Sales</Text></Flex>
             </Flex>
 
@@ -66,9 +66,9 @@ const Navbar = () => {
                 <Flex alignItems={'center'} justifyContent='space-evenly'><AiOutlineSearch fontSize={'20px'}/><Text>Login</Text></Flex>
                 <Flex alignItems={'center'}><Text>Customer Support</Text></Flex>
                 <Flex>
-                    <Popover>
+                    <Popover className={styles.aboutPop}>
                             <PopoverTrigger>
-                                <Text cursor={'pointer'}>About</Text>
+                                <Text  cursor={'pointer'}>About</Text>
                             </PopoverTrigger>
                             <PopoverContent width='150px'>
                                 <PopoverArrow />
@@ -92,12 +92,12 @@ const Navbar = () => {
                     <Box className={styles.softwareMenuBox}>
                             <Menu className={styles.softwareMenu}>
                                 <MenuButton as={Text}>
-                                   <Flex alignItems={'center'}> Software<FiChevronDown/></Flex>
+                                   <Flex fontSize={'20px'} alignItems={'center'}> Software<FiChevronDown/></Flex>
                                 </MenuButton>
                                 <MenuList>
-                                    <Heading as='h2' size='md'>The HubSpot CRM Platform</Heading>
+                                    <Heading textAlign={'center'} as='h2' size='md'>The HubSpot CRM Platform</Heading>
 
-                                    <Text>All of HubSpot’s marketing, sales CRM, customer service, CMS, and operations software on one platform.</Text>
+                                    <Text textAlign={'center'}>All of HubSpot’s marketing, sales CRM, customer service, CMS, and operations software on one platform.</Text>
 
                                     <Button colorScheme={'white'} color='blue' className={styles.softwareMenuButton}>Free HubPoint CRM <AiOutlineArrowRight/></Button>
                                     <Button colorScheme={'white'} color='blue'  className={styles.softwareMenuButton}>Overview of all products <AiOutlineArrowRight/></Button>
@@ -134,12 +134,12 @@ const Navbar = () => {
                             </Menu>
                     </Box>
                     <Box className={styles.pricingBox}>
-                        <Text className={styles.pricingText}>Pricing</Text>
+                        <Text fontSize={'20px'} className={styles.pricingText}>Pricing</Text>
                     </Box>
                     <Box className={styles.resourcesBox}>
                             <Menu>
                                     <MenuButton as={Text} >
-                                        <Flex alignItems={'center'}>Resources<FiChevronDown/></Flex>
+                                        <Flex fontSize={'20px'}  alignItems={'center'}>Resources<FiChevronDown/></Flex>
                                     </MenuButton>
                                    
                                     <MenuList>

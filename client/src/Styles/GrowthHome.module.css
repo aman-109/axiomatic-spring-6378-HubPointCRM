@@ -1,0 +1,69 @@
+.maingrowthbox{
+    width: 90%;
+    margin: auto;
+}
+.secondarygrowthbox{
+    width: 45%;
+}
+.image{
+    width: 30%;
+}
+.maingrowthflex{
+    display: flex;
+    justify-content: space-between;
+}
+.maingrowthheading{
+    padding: 2%;
+    font-size: 1.5rem;
+}
+.maingrowthtext{
+    padding-bottom:2%;
+    padding: 1%;
+}
+.maingrowthbutton{
+    margin-top: 2%;
+    width: 70%;
+    padding: 5%;
+    background-color: #ff5c35;
+}
+.maingrowthbottomtext{
+     font-size: 0.9rem;
+     margin-top: 3%;
+}
+@media screen and (max-width:1040px) {
+    .maingrowthbox{
+        width: 100%;
+    }
+        .maingrowthflex{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+        }
+        .maingrowthheading{
+            padding: 1%;
+            width: 100%;
+            text-align: center;
+            margin-left: -10%;
+        }
+    .maingrowthtext{
+        width: 200%;
+        text-align: justify;
+        margin: auto;
+        margin-left: -50%;
+    }
+    .maingrowthbutton{
+        width: 100%;
+    }
+    .maingrowthbottomtext{
+        width: 100%;
+    }
+    .image{
+        width: 60%;
+    }
+}
+@media screen and (max-width:350px) {
+     .maingrowthbutton{
+        width: 100%;
+          padding: 5%;
+    }
+}

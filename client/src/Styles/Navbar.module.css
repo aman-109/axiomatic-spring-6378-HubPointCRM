@@ -37,10 +37,11 @@
 .softwareMenu{
     padding: 5%;
     overflow: scroll;
-   
+   width: 90%;
 }
 .softwareMenuButton{
         padding: 3%;
+        margin-left: 10%;
         margin-top: 2%;
        margin-right: 2%;
        border: 1px solid aliceblue;
@@ -117,8 +118,9 @@
 .bottomnavbar{
     display:flex;
     top: 0;
-    justify-content:space-between;
-    border:1px solid;
+    justify-content:space-around;
+  
+    /* border:1px solid; */
     padding:20px;
     /* margin-top:0%; */
     position:static;
@@ -133,4 +135,29 @@
 }
 .hamberger{
     display: none;
+}
+
+@media screen and (max-width:540px) {
+    .contrastFlex{
+        display: none;
+    }
+    .demobutton{
+        display: none;
+    }
+    .aboutPop{
+        display: none;
+    }
+    .topHeader{
+        width: 90%;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .bottomnavbar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        row-gap: 30px;
+    }
 }
