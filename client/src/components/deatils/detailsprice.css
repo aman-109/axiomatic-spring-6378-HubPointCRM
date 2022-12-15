@@ -3,12 +3,13 @@
     height: auto;
     background: rgb(236, 237, 238);
     padding: 20px 0;
-    border: 1px solid;
+    margin-bottom: 20px;
+    padding-bottom: 40px;
 }
 .price-main{
     width:90%;
     margin:auto;
-    height:400px;
+    height:auto;
     display:flex;
     justify-content:space-around;
     align-items:center;
@@ -24,5 +25,54 @@
     height:40%;
     padding:20px 20px;
     color: white;
-    background: linear-gradient(90deg, rgb(97, 171, 228) 51%, rgba(61,141,235,1) 63%);
+    background: linear-gradient(90deg, rgb(56, 126, 180) 51%, rgb(31, 117, 214) 63%);
+}
+.details-price1b{
+    height:60%;
+    padding:10px 10px;
+    text-align:start;
+    background:white;
+}
+.p-price{
+    font-size:14px;
+    margin-left:65px;
+    line-height:25px;
+    margin-top:30px;
+    width:90%;
+}
+@media only screen and (max-width: 1000px) and (min-width:510px){
+    .price-main{
+     width: 100%;
+     height: auto;
+     display:grid;
+     grid-template-columns: repeat(2,1fr);
+     grid-template-rows: auto auto;
+     gap: 40px 0;
+     margin: auto;
+    }
+    .details-price1{
+        width:90%;
+        margin: auto;
+    }
+    .p-price{
+        width: 80%;
+    }
+}
+@media only screen and (max-width: 510px) and (min-width:390px){
+    .price-main{
+     width: 100%;
+     height: auto;
+     display:grid;
+     grid-template-columns: repeat(1,1fr);
+     grid-template-rows: auto auto auto;
+     gap: 40px 0;
+     margin: auto;
+    }
+    .details-price1{
+        width:80%;
+        margin: auto;
+    }
+    .p-price{
+        width: 80%;
+    }
 }

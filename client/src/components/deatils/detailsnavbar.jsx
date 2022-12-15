@@ -33,7 +33,7 @@ const Detailsnavbar = () => {
               <div className='navbar-left2'><Link to="Overview" smooth duration={500}>Overview</Link></div>
               <div className='navbar-left2'><Link to="Features" smooth duration={500}>Features</Link></div>
               <div className='navbar-left2'><Link to="Shared data" smooth duration={500}>Shared data</Link></div>
-              <div className='navbar-left2'><Link to="Pricing" smooth duration={500}>Pricing</Link></div>
+              <div className='navbar-left2'><Link to="Price" smooth duration={500}>Pricing</Link></div>
               <div className='navbar-left2'><Link to="Reviews" smooth duration={500}>Reviews</Link></div>
           </div>
        </div>
@@ -47,7 +47,7 @@ const Detailsnavbar = () => {
               <div className='navbar-left2'><Link to="Overview" smooth duration={500}>Overview</Link></div>
               <div className='navbar-left2'><Link to="Features" smooth duration={500}>Features</Link></div>
               <div className='navbar-left2'><Link to="Shared data" smooth duration={500}>Shared data</Link></div>
-              <div className='navbar-left2'><Link to="Pricing" smooth duration={500}>Pricing</Link></div>
+              <div className='navbar-left2'><Link to="Price" smooth duration={500}>Pricing</Link></div>
               <div className='navbar-left2'><Link to="Reviews" smooth duration={500}>Reviews</Link></div>
           </div>
     </div>
