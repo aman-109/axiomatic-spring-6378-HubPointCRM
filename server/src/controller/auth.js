@@ -21,10 +21,20 @@ const createUser = async (data) => {
   }
 };
 
+const findUser = async (data) => {
+  let user = await User.findOne({ ...data });
+  if (user) {
+    return user;
+  } else {
+    return false;
+  }
+};
+
 const validateUser = async (data) => {
   let { email, password } = data;
   try {
     let user = await findUser({ email });
+    console.log(user);
     if (user) {
       if (await argon2.verify(user.password, password)) {
         return user;
@@ -47,6 +57,7 @@ const getUser = async (req, res) => {
 // 1. Signup callback
 const signupUser = async (req, res) => {
   let data = req.body;
+
   let user = await createUser({ ...data });
   if (user) {
     return res.send({ status: true, messege: "user created successfully" });
@@ -59,6 +70,7 @@ const signupUser = async (req, res) => {
 const loginUser = async (req, res) => {
   let { email, password } = req.body;
   let user = await validateUser({ email, password });
+
   if (user) {
     let token = jwt.sign(
       { email: user.email, name: user.name, role: user.role },
@@ -73,8 +85,9 @@ const loginUser = async (req, res) => {
       refreshToken_secret,
       { expiresIn: "28 days" }
     );
-
-    return res.send({ status: true, token, refreshToken });
+     res.cookie("token", token)
+     res.cookie("refreshToken",refreshToken)
+     .send({ status: true, token, refreshToken });
   } else {
     return res.send({ status: false, messege: "something went wrong" });
   }
@@ -94,8 +107,8 @@ const logoutUser = async (req, res) => {
 };
 
 //4. Refresh Token callback
-const getRefreshToekn = async (req, res) => {
-  let token = req.headers.authorization;
+const getRefreshToken = async (req, res) => {  
+  let token = req.cookies.refreshToken
   let sp = await Blacklist.findOne({ token });
   if (sp) {
     return res.status(401).send({ status: false, message: "user logouted" });
@@ -112,8 +125,8 @@ const getRefreshToekn = async (req, res) => {
             expiresIn: "7 day",
           }
         );
-
-        return res.status(200).send({
+        
+        return res.status(200).cookie("token",new_token).cookie("refreshToken",token).send({
           status: true,
           token: new_token,
           refreshToken: token,
@@ -138,5 +151,5 @@ module.exports = {
   signupUser,
   loginUser,
   logoutUser,
-  getRefreshToekn,
+  getRefreshToken,
 };
