@@ -14,7 +14,7 @@ const Detailsprice = () => {
                 <h1 style={{fontSize:"150%",lineHeight:"40px"}}>Free</h1>
                 <p>{`Base cost for ${"Gmail"} domain address is Free. Custom domains start at $6 per active user/month`}</p>
                 </div>
-                 <div style={{height:"60%",border:"1px solid black",padding:"10px 10px",textAlign:"start",background:"white"}}>
+                 <div className='details-price1b'>
                 <h1 style={{fontSize:"220%",color:"black",lineHeight:"60px",fontWeight:"660",textAlign:"center"}}>Free</h1>
                     <div style={{display:"flex",width:"80%",lineHeight:"40px",margin:"auto"}}>
                       <span style={{position:"absolute",marginTop:"6px"}}><BiCheck size={25} /></span>
@@ -34,7 +34,7 @@ const Detailsprice = () => {
                 <p>{`Base cost for ${"Gmail"} domain address is Free. Custom domains start at $6 per active user/month`}</p>
                 </div>
                 
-                 <div style={{height:"60%",border:"1px solid black",padding:"10px 10px",textAlign:"start",background:"white"}}>
+                 <div className='details-price1b'>
                  <h1 style={{fontSize:"220%",color:"black",lineHeight:"60px",fontWeight:"660",textAlign:"center"}}>$6</h1>
                     <div style={{display:"flex",width:"80%",lineHeight:"40px",margin:"auto"}}>
                       <span style={{position:"absolute",marginTop:"6px"}}><BiCheck size={25} /></span>
@@ -58,7 +58,7 @@ const Detailsprice = () => {
                 <p>{`Base cost for ${"Gmail"} domain address is Free. Custom domains start at $6 per active user/month`}</p>
                 </div>
                
-                 <div style={{height:"60%",border:"1px solid black",padding:"10px 10px",textAlign:"start",background:"white"}}>
+                 <div className='details-price1b'>
                  <h1 style={{fontSize:"220%",color:"black",lineHeight:"60px",fontWeight:"660",textAlign:"center"}}>$12</h1>
                     <div style={{display:"flex",width:"80%",lineHeight:"40px",margin:"auto"}}>
                       <span style={{position:"absolute",marginTop:"6px"}}><BiCheck size={25} /></span>
@@ -76,6 +76,7 @@ const Detailsprice = () => {
             </div>
            
         </div>
+        <p className='p-price'>{`* The pricing here is for display purposes only. All prices are U.S. only and do not include taxes, incentives, discounts, or other pricing variables. You should contact the partner for the most up to date and correct pricing information. HubSpot does not take any responsibility for this pricing information, which is provided by our partners. Pricing last updated: 01/24/2022`}</p>
     </div>
   )
 }
