@@ -62,7 +62,7 @@
     width: 90%;
     /* border: 1px solid; */
     margin: auto;
-    height: 100vh;
+    /* height: auto; */
     margin-top: 5%;
     gap: 5%;
     display: grid;

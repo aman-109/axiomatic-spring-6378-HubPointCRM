@@ -1,0 +1,70 @@
+.adsbox{
+    /* border: 1px solid; */
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    padding:5%
+}
+.image{
+    width: 100px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 60%;
+    margin: auto;
+    margin-right: -10%;
+}
+.heading{
+    text-align:justify;
+    font-size: 40px;
+    /* margin-left:-100%; */
+}
+.adsvstack{
+    width:40%;
+    text-align:justify;
+}
+.adsflex{
+    display: flex;
+    justify-content:space-evenly;
+}
+.text{
+    text-align: justify;
+    width: 75%;
+    /* margin-left:-100%; */
+}
+@media screen and (max-width:1040px) {
+    .adsflex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+ .adsvstack{
+    width: 100%;
+    margin-bottom: 2%;
+ }
+ .grid{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin: auto;
+    margin-top: 5%;
+    gap: 10px;
+    width: 100%;
+ }
+ .adsflex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+ }
+ .text{
+    width: 90%;
+    text-align: justify;
+ }
+ .heading{
+    text-align: center;
+ }
+}

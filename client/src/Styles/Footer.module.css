@@ -1,0 +1,117 @@
+.ul1 li{
+    list-style:none;
+    line-height:40px;
+    font-size:12px;
+    font-weight:bold;
+   color: #b6c7d6
+}
+.ul2 li{
+    list-style:none;
+      line-height:40px;
+     font-size:12px;
+    font-weight:bold;
+    color: #b6c7d6
+}
+.footer{
+    width:100%;
+    margin:auto;
+    margin-top:5%;
+    background-color:#213343;
+    color:white;
+    padding:10px;
+}
+.footeflexmain{
+    display:flex;
+    justify-content:space-evenly;
+   margin-top:5%;
+}
+.divider{
+    margin-left:5%;
+    margin-right:-5%;
+}
+.rightFlex{
+    display :flex;
+    justify-content:space-evenly;
+     gap:50px;
+}
+.leftFlex{
+     display :flex;
+    justify-content:space-evenly;
+    gap:50px;
+}
+.socialicons{
+    font-size: 25px;
+}
+.footersocialbox{
+    width: 70%;
+    margin: auto;
+    margin-top: 3%;
+}
+.socialiconsflex{
+    justify-content: space-evenly;
+}
+.bottomdivider1{
+    width: 40%;
+}
+.bottomdivider2{
+    width: 40%;
+}
+.socialiconsflex{
+    width: 100%;
+}
+.footersocialflex{
+    align-items: center;
+}
+.hubimage{
+    background-color: none;
+}
+.legalheading{
+    text-align: center;
+    padding-top: 2%;
+}
+.copytext{
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+}
+.legalflex{
+    text-align: center;
+    justify-content: center;
+    gap: 20px;
+    text-decoration: underline;
+}
+.legalbox{
+    padding: 10px;
+}
+
+@media screen and (max-width:1040px) {
+    .footeflexmain{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .leftFlex{
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .rightFlex{
+         flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footersocialbox{
+        width: 100%;
+    }
+}
+@media screen and (max-width:350px) {
+    .bottomdivider1{
+        display: none;
+    }
+    .bottomdivider2{
+        display: none;
+    }
+}
