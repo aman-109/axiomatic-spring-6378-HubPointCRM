@@ -1,0 +1,149 @@
+import { Box, Button, Container, Divider, Flex, FormControl, Heading, HStack, Image, Input, Stack, Text, VStack } from '@chakra-ui/react';
+import React, { useState } from 'react';
+import { FcGoogle, FcNext } from 'react-icons/fc';
+import { ImOpt } from 'react-icons/im';
+import { TfiFacebook} from 'react-icons/tfi';
+import { Link } from 'react-router-dom';
+import hub from "../components/assets/Hub point.png";
+import styles from "../Styles/Signup.module.css";
+import signup from "../components/assets/signupimage.webp";
+
+const Signup = () => {
+
+    const [signupCreds , setSignupCreds] = useState({
+        firstname:'',
+        lastname:'',
+        email:''
+    })
+
+    const handleChange = (e) =>{
+        const {name,value} = e.target;
+        setSignupCreds({
+            ...signupCreds,
+            [name]:value
+        })
+    }
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+
+    }
+    return (
+
+        <Box className={styles.mainflexsignup}>
+            <Flex className={styles.header}>
+                <Box>
+                     <Image className={styles.logo} src={hub}></Image>
+                </Box>
+                <Box>
+                      <Text className={styles.signintext}>Have an account?<Link className={styles.signinlink}to='/login'>Sign in</Link></Text>
+                </Box>
+            </Flex>
+
+            <Flex className={styles.bottomflex}>
+                <Box className={styles.leftside}>
+                         <Heading className={styles.createHead}>Create your free account</Heading> 
+                        <Text textAlign={'center'} padding='10px'>100% free. No credit card needed.</Text>
+                    <VStack className={styles.buttonvsatck}>
+                         <Button bgColor={'skyblue'} borderRadius='5px' className={styles.googlesignup}>Signup with Google<FcGoogle fontSize={'25px'} padding='20px' borderRadius='0px'/></Button>
+                        
+                        <Button marginTop={'3%'} bgColor={'darkblue'}  borderRadius='5px' className={styles.fbsignup}>Signup with Facebook<TfiFacebook fontSize={'25px'} padding='20px' borderRadius='0px'/></Button>
+                    </VStack>
+
+                         <Flex className={styles.dividerflex}>
+                            <Divider  className={styles.divider1}orientation='horizontal'></Divider>
+                            <Text className={styles.dividerText}>Or</Text>
+                            <Divider className={styles.divider2} orientation='horizontal'></Divider>
+                        </Flex>
+                         <FormControl>
+                            <Flex><Container className={styles.inputHStack}><Input 
+                            onChange={handleChange}
+                            value={signupCreds.firstname}
+                            name='first name'
+                            placeholder='Enter Name' borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            className={styles.nameInput}></Input>
+
+                            {/* <Input
+                            onChange={handleChange}
+                            value={signupCreds.lastname}
+                            name='last name'
+                            borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            placeholder='Last name'className={styles.lastnameInput}>
+                            </Input> */}
+                            </Container>
+                            </Flex>
+
+                            <Container alignItems={'flex-start'}>
+                            <Input
+                            onChange={handleChange}
+                            name='email'
+                            value={signupCreds.email}
+                            placeholder=' Email address'
+                              borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            className={styles.emailinput}>
+                            </Input>
+                            </Container>
+
+                            <Container alignItems={'flex-start'}>
+                            <Input
+                            onChange={handleChange}
+                            name='email'
+                            value={signupCreds.password}
+                            placeholder=' Enter Password'
+                            borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            className={styles.emailinput}>
+                            </Input>
+                            </Container>
+
+                            <Container alignItems={'flex-start'}>
+                            <Input
+                            onChange={handleChange}
+                            name='email'
+                            value={signupCreds.companyName}
+                            placeholder=' Company name'
+                              borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            className={styles.emailinput}>
+                            </Input>
+                            </Container>
+
+                            <Container alignItems={'flex-start'}>
+                            <Input
+                            onChange={handleChange}
+                            name='email'
+                            value={signupCreds.companyWebsite}
+                            placeholder=' Company website'
+                              borderTop={'0px'} 
+                            borderLeft='0px'
+                            borderRight={'0px'}
+                            className={styles.emailinput}>
+                            </Input>
+                            </Container>
+
+                            <Button bgColor={'tomato'} 
+                            onClick={handleSubmit}
+                            className={styles.nextbutton}>Next<FcNext  fontSize={'20px'}/></Button>
+                        </FormControl>
+                    <Text className={styles.leftsidetext}>We’re committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our Privacy Policy</Text>
+
+                </Box>
+                <Box className={styles.rightSide}>
+                     <Image className={styles.signupimage} src={signup}></Image>
+                     <Heading className={styles.crmhead} marginTop={'2%'} as='h4' size={'md'} textAlign={'center'}>HubSpot's CRM is 100% free.</Heading>
+                     <Text className={styles.crmtext}  textAlign={'center'} marginTop='3%'>No credit card needed.</Text>
+                </Box>   
+            </Flex>
+        </Box>
+    );
+}
+
+export default Signup;
