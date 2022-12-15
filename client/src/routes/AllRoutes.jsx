@@ -8,9 +8,11 @@ import Productdetails from "../pages/Productdetails";
 const AllRoutes = () => {
   return (
     <Routes>
+
       <Route path="/" element={<Home />}></Route>
       <Route path="/" element={<Productdetails />}></Route>
       <Route path="/marketplace" element={<Marketplace />}></Route>
+
     </Routes>
   );
 };
