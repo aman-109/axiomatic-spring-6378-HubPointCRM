@@ -174,7 +174,7 @@ const Navbar = () => {
                     </Box>
                 </Flex>
                 <Box className={styles.demobuttonBox}>
-                        <Button borderRadius='0px'  colorScheme='#ff5c35' className={styles.demobutton}>Start free or get a demo</Button>
+                        <Link to='/login'><Button borderRadius='0px'  colorScheme='#ff5c35' className={styles.demobutton}>Start free or get a demo</Button></Link>
                 </Box>
             </Flex>
             <Box className={styles.hamberger} onClick={handleClick}>

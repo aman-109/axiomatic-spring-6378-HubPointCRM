@@ -3,37 +3,43 @@ import React, { useState } from 'react';
 import { FcGoogle, FcNext } from 'react-icons/fc';
 import { ImOpt } from 'react-icons/im';
 import { TfiFacebook} from 'react-icons/tfi';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import hub from "../components/assets/Hub point.png";
 import styles from "../Styles/Signup.module.css";
 import signup from "../components/assets/signupimage.webp";
+import axios from 'axios';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { login } from '../redux/auth/auth.actions';
 
 const Signup = () => {
+    const navigate= useNavigate()
+   const [signupCreds,setSignupCreds] = useState({
+    name:"",
+    email:"",
+    password:"",
+    company_name:"",
+    company_website:""
+   })
 
-    const [signupCreds , setSignupCreds] = useState({
-        firstname:'',
-        lastname:'',
-        email:''
-    })
-
-    const handleChange = (e) =>{
-        const {name,value} = e.target;
+   const handleChange = (e) =>{
+    const {name,value} = e.target;
         setSignupCreds({
             ...signupCreds,
             [name]:value
         })
-    }
-
-    const handleSubmit = (e) =>{
+   }
+   const handlesubmit = async(e) =>{
         e.preventDefault()
-
-    }
+     axios.post("url",signupCreds)
+     .then((res)=>navigate("/login"))
+    .catch((err)=>alert(err.message))
+   }
     return (
 
         <Box className={styles.mainflexsignup}>
             <Flex className={styles.header}>
                 <Box>
-                     <Image className={styles.logo} src={hub}></Image>
+                     <Link to='/'><Image className={styles.logo} src={hub}></Image></Link>
                 </Box>
                 <Box>
                       <Text className={styles.signintext}>Have an account?<Link className={styles.signinlink}to='/login'>Sign in</Link></Text>
@@ -55,11 +61,11 @@ const Signup = () => {
                             <Text className={styles.dividerText}>Or</Text>
                             <Divider className={styles.divider2} orientation='horizontal'></Divider>
                         </Flex>
-                         <FormControl>
+                         <FormControl onSubmit={handlesubmit}>
                             <Flex><Container className={styles.inputHStack}><Input 
                             onChange={handleChange}
                             value={signupCreds.firstname}
-                            name='first name'
+                            name='name'
                             placeholder='Enter Name' borderTop={'0px'} 
                             borderLeft='0px'
                             borderRight={'0px'}
@@ -93,7 +99,7 @@ const Signup = () => {
                             <Container alignItems={'flex-start'}>
                             <Input
                             onChange={handleChange}
-                            name='email'
+                            name='password'
                             value={signupCreds.password}
                             placeholder=' Enter Password'
                             borderTop={'0px'} 
@@ -106,7 +112,7 @@ const Signup = () => {
                             <Container alignItems={'flex-start'}>
                             <Input
                             onChange={handleChange}
-                            name='email'
+                            name='company_name'
                             value={signupCreds.companyName}
                             placeholder=' Company name'
                               borderTop={'0px'} 
@@ -119,7 +125,7 @@ const Signup = () => {
                             <Container alignItems={'flex-start'}>
                             <Input
                             onChange={handleChange}
-                            name='email'
+                            name='company_website'
                             value={signupCreds.companyWebsite}
                             placeholder=' Company website'
                               borderTop={'0px'} 
@@ -129,8 +135,8 @@ const Signup = () => {
                             </Input>
                             </Container>
 
-                            <Button bgColor={'tomato'} 
-                            onClick={handleSubmit}
+                            <Button disabled={!signupCreds.name || !signupCreds.email || !signupCreds.password || !signupCreds.company_name || !signupCreds.company_website} bgColor={'tomato'} 
+                            // onClick={handleSubmit}
                             className={styles.nextbutton}>Next<FcNext  fontSize={'20px'}/></Button>
                         </FormControl>
                     <Text className={styles.leftsidetext}>We’re committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our Privacy Policy</Text>

@@ -61,13 +61,13 @@
     width: 100%;
 }
 .googlesignup{
-    width: 80%;
+    width: 85%;
     border-radius: none;
     color: white;
     
 }
 .fbsignup{
-    width: 80%;
+    width: 85%;
     color: white;
     margin-top: 5%;
 }
@@ -79,10 +79,10 @@
     font-weight: bold;
 }
 .divider1{
-    width: 30%;
+    width: 45%;
 }
 .divider2{
-    width: 30%;
+    width: 45%;
 }
 .dividerText{
     margin-top: -3%;
@@ -102,11 +102,11 @@
     border-right: 0px;
     width: 100%;
 }
-.nextbutton{
-    width: 100%;
+/* .nextbutton{
+    width: 90%;
     margin: auto;
     margin-top: 2%;
-}
+} */
 .inputHStack{
     width: 100%;
 }
@@ -114,8 +114,9 @@
     width: 100%;
 }
 .nextbutton{
-    width: 100%;
+    width: 90%;
     margin: auto;
+    margin-left: 5%;
     margin-top: 5%;
     padding: 2%;
     background-color: tomato;
