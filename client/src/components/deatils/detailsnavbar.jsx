@@ -4,19 +4,19 @@ import gmail from "../../images/gmail.webp";
 import certified from "../../images/certified.webp";
 import {AiOutlineLink} from "react-icons/ai"
 import {Link} from "react-scroll"
-const Detailsnavbar = () => {
+const Detailsnavbar = ({image,name}) => {
   return (
     <div className='detailsnavbar'>
        <div className='navbar-left'>
           <div className='navbar-left1'>
           
           <div style={{width:"15%"}}>
-            <img src={gmail} style={{width:"100%"}}/>
+            <img src={image} style={{width:"100%"}}/>
           </div>
 
           <div style={{width:"80%",lineHeight:"32px"}}>
-            <h1 style={{fontSize:"30px",fontWeight:"bold"}}>Gmail</h1>
-            <p>{`Bring HubSpot to your inbox with the HubSpot integration for ${"Gmail"}.`}</p>
+            <h1 style={{fontSize:"30px",fontWeight:"bold",lineHeight:"50px"}}>{`${name}`}</h1>
+            <p style={{lineHeight:"22px"}}>{`Bring HubSpot to your inbox with the HubSpot integration for ${name}.`}</p>
              
              <div style={{width:"100%",display:"flex",margin:"auto"}}>
                 <div style={{width:"5%",marginTop:"3px"}}> 
@@ -34,7 +34,7 @@ const Detailsnavbar = () => {
               <div className='navbar-left2'><Link to="Features" smooth duration={500}>Features</Link></div>
               <div className='navbar-left2'><Link to="Shared data" smooth duration={500}>Shared data</Link></div>
               <div className='navbar-left2'><Link to="Price" smooth duration={500}>Pricing</Link></div>
-              <div className='navbar-left2'><Link to="Reviews" smooth duration={500}>Reviews</Link></div>
+              <div className='navbar-left2'><Link to="Review" smooth duration={500}>Reviews</Link></div>
           </div>
        </div>
        
@@ -48,7 +48,7 @@ const Detailsnavbar = () => {
               <div className='navbar-left2'><Link to="Features" smooth duration={500}>Features</Link></div>
               <div className='navbar-left2'><Link to="Shared data" smooth duration={500}>Shared data</Link></div>
               <div className='navbar-left2'><Link to="Price" smooth duration={500}>Pricing</Link></div>
-              <div className='navbar-left2'><Link to="Reviews" smooth duration={500}>Reviews</Link></div>
+              <div className='navbar-left2'><Link to="Review" smooth duration={500}>Reviews</Link></div>
           </div>
     </div>
   )

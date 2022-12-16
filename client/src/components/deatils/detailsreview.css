@@ -2,8 +2,8 @@
     width:100%;
     height: auto;
     padding: 20px 20px;
-    margin-bottom: 70px;
-    padding-bottom: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 .price-main2{
     width:100%;
@@ -13,8 +13,8 @@
     padding: 0 30px;
 }
 .price-left{
-    width:33%;
-    height: 200px;
+    width:34%;
+    height: auto;;
 }
 .price-right{
     width:65%;
@@ -22,6 +22,7 @@
 }
 .price-right1{
     display:flex;
+    width: 100%;
     border-bottom:1px solid gray;
     justify-content:space-between;
     align-items:center;
@@ -34,4 +35,17 @@
     padding:10px 10px;
     height: auto;
     width: 100%;
+}
+@media only screen and (max-width: 749px) and (min-width: 390px){
+    .price-main2{
+        display: block;
+    }
+    .price-left{
+        width:90%;
+        margin: auto;
+    }
+    .price-right{
+        width:90%;
+        margin: auto;
+    }
 }
