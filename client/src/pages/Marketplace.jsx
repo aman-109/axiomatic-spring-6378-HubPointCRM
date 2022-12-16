@@ -142,6 +142,7 @@ const Marketplace = () => {
     setAbmApps(false);
     setAutomationApps(false);
     setIsActive(false);
+    setPaidApps(false);
     // setAllcompanies(popularApps);
     setPopular(!popular);
   };
@@ -156,8 +157,9 @@ const Marketplace = () => {
     setWorkflowApps(false);
     setCustomizableApps(false);
     setAbmApps(false);
+    setPaidApps(false);
     setAutomationApps(false);
-    setAllcompanies(newApps);
+    // setAllcompanies(newApps);
     setNewapps(!newapps);
   };
   const getFreeApps = async () => {
@@ -173,7 +175,8 @@ const Marketplace = () => {
     setAbmApps(false);
     setIsActive(false);
     setAutomationApps(false);
-    setAllcompanies(freeApps);
+   
+    // setAllcompanies(freeApps);
     setFreeapps(!freeapps);
   };
   const getBuildbyApps = async () => {
@@ -187,8 +190,9 @@ const Marketplace = () => {
     setWorkflowApps(false);
     setCustomizableApps(false);
     setAbmApps(false);
+    setPaidApps(false);
     setAutomationApps(false);
-    setAllcompanies(builtApps);
+    // setAllcompanies(builtApps);
     setBuiltApps(!builtapps);
   };
   const getWorkFlowApps = async () => {
@@ -203,7 +207,8 @@ const Marketplace = () => {
     setCustomizableApps(false);
     setAbmApps(false);
     setAutomationApps(false);
-    setAllcompanies(workFlowApps);
+    setPaidApps(false);
+    // setAllcompanies(workFlowApps);
     setWorkflowApps(!workflowapps);
   };
   const getCustomizeApps = async () => {
@@ -217,8 +222,9 @@ const Marketplace = () => {
     setWorkflowApps(false);
     setIsActive(false);
     setAbmApps(false);
+    setPaidApps(false);
     setAutomationApps(false);
-    setAllcompanies(customizableApps);
+    // setAllcompanies(customizableApps);
     setCustomizableApps(!customizapps);
   };
   const getAbmApps = async () => {
@@ -232,8 +238,9 @@ const Marketplace = () => {
     setWorkflowApps(false);
     setCustomizableApps(false);
     setIsActive(false);
+    setPaidApps(false);
     setAutomationApps(false);
-    setAllcompanies(abmApps);
+    // setAllcompanies(abmApps);
     setAbmApps(!abmapps);
   };
   const getAutomationApps = async () => {
@@ -244,11 +251,12 @@ const Marketplace = () => {
     setNewapps(false);
     setFreeapps(false);
     setBuiltApps(false);
+    setPaidApps(false);
     setWorkflowApps(false);
     setCustomizableApps(false);
     setAbmApps(false);
     setIsActive(false);
-    setAllcompanies(automationApps);
+    // setAllcompanies(automationApps);
     setAutomationApps(!automationapps);
   };
 
