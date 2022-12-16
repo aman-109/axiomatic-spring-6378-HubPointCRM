@@ -13,6 +13,7 @@ const getProd = async (id) => {
 const searchProd = async (query) => {
   await Product.createIndexes({ name: "text" });
   let prod = await Product.find({ $text: { $search: query } });
+
   if (prod) {
     return prod;
   } else {
@@ -25,17 +26,16 @@ const searchProd = async (query) => {
 // 1. Get All Product callback
 const getAllProduct = async (req, res) => {
   let query = req.query.q;
-  let filter=req.body.type
+  let filter = req.body.type;
 
   if (filter) {
-        let prods = await Product.find({type:filter});
-        if (!prods) {
-          return res.status(401).send({ message: "product not found" });
-        } else {
-          return res.status(200).send(prods);
-        }
-      }
-  else if (query) {
+    let prods = await Product.find({ type: filter });
+    if (!prods) {
+      return res.status(401).send({ message: "product not found" });
+    } else {
+      return res.status(200).send(prods);
+    }
+  } else if (query) {
     let prods = await searchProd(query);
     if (!prods) {
       return res.status(401).send({ message: "product not found" });
