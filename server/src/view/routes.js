@@ -27,7 +27,8 @@ router
     }),
     googleRoute.google
   )
-  .get("/products",  productRoute.getAllProduct)
-  .get("/products/:id", productRoute.getSingleProduct);
+  .get("/products", productRoute.getAllProduct)
+  .get("/products/:id", productRoute.getSingleProduct)
+  .get("/products/add-product/:id", productRoute.addProd);
 
 module.exports = router;

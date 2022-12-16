@@ -1,4 +1,7 @@
 const Product = require("../model/product.model");
+const User = require("../model/user.model");
+const jwt = require("jsonwebtoken");
+const token_secret = process.env.TOKEN_KEY;
 
 // Helper functions
 const getProd = async (id) => {
@@ -62,5 +65,21 @@ const getSingleProduct = async (req, res) => {
     return res.status(401).send({ message: "something went wrong" });
   }
 };
+const addProd = async (req, res) => {
+  let { id } = req.params;
+  const token = req.cookies.token;
+  let verification = jwt.verify(token, token_secret);
+  try {
+    let user = await User.findOne(
+      { email: verification.email },
+      { $push: { purchased_product: { product_id: id } } }
+    );
+    return res
+      .status(200)
+      .send({ status: true, message: "prodeuct added successfully" });
+  } catch (e) {
+    return res.status(401).send({ message: "something went wrong" });
+  }
+};
 
-module.exports = { getAllProduct, getSingleProduct };
+module.exports = { getAllProduct, getSingleProduct,addProd };
