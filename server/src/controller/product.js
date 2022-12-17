@@ -67,10 +67,10 @@ const getSingleProduct = async (req, res) => {
 };
 const addProd = async (req, res) => {
   let { id } = req.params;
-  const token = req.cookies.token;
+  const token = req.cookies.token;  
   let verification = jwt.verify(token, token_secret);
   try {
-    let user = await User.findOne(
+    let user = await User.findOneAndUpdate(
       { email: verification.email },
       { $push: { purchased_product: { product_id: id } } }
     );
@@ -78,7 +78,7 @@ const addProd = async (req, res) => {
       .status(200)
       .send({ status: true, message: "prodeuct added successfully" });
   } catch (e) {
-    return res.status(401).send({ message: "something went wrong" });
+    return res.status(401).send({ message: e.message });
   }
 };
 
