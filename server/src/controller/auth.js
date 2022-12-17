@@ -44,7 +44,7 @@ const validateUser = async (data) => {
   let { email, password } = data;
   try {
     let user = await findUser({ email });
-    console.log(user);
+    
     if (user) {
       if (await argon2.verify(user.password, password)) {
         return user;
@@ -115,8 +115,8 @@ const loginUser = async (req, res) => {
       refreshToken_secret,
       { expiresIn: "28 days" }
     );
-     res.cookie("token", token)
-     res.cookie("refreshToken",refreshToken)
+     res.status(200).cookie("token", token)
+     .cookie("refreshToken",refreshToken)
      .send({ status: true, token, refreshToken });
   } else {
     return res.send({ status: false, messege: "something went wrong" });

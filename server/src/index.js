@@ -10,7 +10,7 @@ app.use(cookieParser());
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:true,credentials:true}));
 app.use(require("./view/routes"));
 
 app.listen(PORT, async () => {
