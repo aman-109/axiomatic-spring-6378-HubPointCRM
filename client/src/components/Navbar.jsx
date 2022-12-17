@@ -18,6 +18,7 @@ import {FaBars} from "react-icons/fa";
 import {FaTimes} from "react-icons/fa";
 import hub from "./assets/Hub point.png";
 import {FaHubspot} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -63,7 +64,7 @@ const Navbar = () => {
 
     
             <Flex className={styles.rightSide}>
-                <Flex alignItems={'center'} justifyContent='space-evenly'><AiOutlineSearch fontSize={'20px'}/><Text>Login</Text></Flex>
+                <Flex alignItems={'center'} justifyContent='space-evenly'><AiOutlineSearch fontSize={'20px'}/><Link to='/login'>Login</Link></Flex>
                 <Flex alignItems={'center'}><Text>Customer Support</Text></Flex>
                 <Flex>
                     <Popover className={styles.aboutPop}>
@@ -173,7 +174,7 @@ const Navbar = () => {
                     </Box>
                 </Flex>
                 <Box className={styles.demobuttonBox}>
-                        <Button borderRadius='0px'  colorScheme='#ff5c35' className={styles.demobutton}>Start free or get a demo</Button>
+                        <Link to='/login'><Button borderRadius='0px'  colorScheme='#ff5c35' className={styles.demobutton}>Start free or get a demo</Button></Link>
                 </Box>
             </Flex>
             <Box className={styles.hamberger} onClick={handleClick}>

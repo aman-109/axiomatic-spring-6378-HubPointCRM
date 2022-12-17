@@ -24,6 +24,7 @@ import { FaLeaf } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import SearchCompanies from "../components/SearchCompanies";
 
+import NavbarTwo from "../components/dashboard/Navbar";
 const getCompanies = async () => {
   let res = await fetch("http://localhost:8179/products");
   let data = await res.json();
@@ -358,6 +359,8 @@ console.log(q);
   console.log(allcompanies);
 
   return (
+    <>
+    <NavbarTwo/>
     <Container maxW="9xl" bg="#ffffff" centerContent>
       <Box
         py={5}
@@ -1182,6 +1185,7 @@ console.log(q);
         </Box>
       </Flex>
     </Container>
+    </>
   );
 };
 
