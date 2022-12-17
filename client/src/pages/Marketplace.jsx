@@ -22,6 +22,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FaLeaf } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
+import SearchCompanies from "../components/SearchCompanies";
 
 const getCompanies = async () => {
   let res = await fetch("http://localhost:8179/products");
@@ -95,6 +96,11 @@ const Marketplace = () => {
   const navigate = useNavigate();
   const [allcompanies, setAllcompanies] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [q, setQ] = useState("");
+  const [searchApps, setSearchApps] = useState([]);
+  const [option, setOption] = useState("All categories");
+  
+  const [showSearch, setShowSearch] = useState(false);
   // const [popular, setPopular] = useState([]);
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
@@ -175,7 +181,7 @@ const Marketplace = () => {
     setAbmApps(false);
     setIsActive(false);
     setAutomationApps(false);
-   
+
     // setAllcompanies(freeApps);
     setFreeapps(!freeapps);
   };
@@ -279,7 +285,12 @@ const Marketplace = () => {
     setAllcompanies(paidApps);
     setPaidApps(!paidapps);
   };
+
   // ------>>>>
+
+  // Search Products:
+
+  console.log("q", q);
   useEffect(() => {
     getCompanies().then((res) => setAllcompanies(res));
     // setPopular(popularApps);
@@ -295,10 +306,24 @@ const Marketplace = () => {
     paidapps,
     loading,
     isActive,
+    showSearch,
   ]);
   let popularApps = allcompanies.filter((el) => {
     return el.type === "Popular apps" && el;
   });
+  
+  const getSearchProducts = async (q) => {
+ setQ(q)
+ setShowSearch(true);
+    if(q == ""){
+      return setShowSearch(false);
+     
+    }
+    let data = await axios.get(`http://localhost:8179/products?q=${q}`);
+
+    setSearchApps(data.data);
+  };
+console.log(q);
   let newApps = allcompanies.filter((el) => {
     return el.type === "New apps" && el;
   });
@@ -329,6 +354,7 @@ const Marketplace = () => {
   };
 
   //
+  console.log("option", showSearch);
   console.log(allcompanies);
 
   return (
@@ -365,23 +391,34 @@ const Marketplace = () => {
         <Text color={"white"}>Connect your favorite tools to HubSpot</Text>
 
         <br />
-        <Flex justifyContent={"center"} bg={"white"} maxW="3xl" margin={"auto"}>
+        <Flex justifyContent={"center"} bg={"white"} maxW="3xl" margin={"auto"} alignItems={"center"}>
           <Select
             placeholder="All categories"
             rounded={"none"}
             size="lg"
+            border={"none"}
             w={40}
+            onChange={(e) => setOption(e.target.value)}
           >
-            <option value="option1">Marketting</option>
-            <option value="option2">Sales</option>
-            <option value="option3">Finance</option>
+            <option value="Marketting">Marketting</option>
+            <option value="Sales">Sales</option>
+            <option value="Finance">Finance</option>
           </Select>
           <Input
+           border={"none"}
             size="lg"
             rounded={"none"}
+            type={"text"}
             placeholder="Search app name or bussiness needs...."
+            onChange={(e) => getSearchProducts(e.target.value)}
           />
-          <Button bg={"white"} h={"7vh"} alignItems={"center"}>
+          <Button
+            bg={"white"}
+            h={"7vh"}
+            alignItems={"center"}
+            border={"none"}
+            onClick={()=>getSearchProducts(q)}
+          >
             <BsSearch h={"full"} />
           </Button>
         </Flex>
@@ -394,7 +431,7 @@ const Marketplace = () => {
         <Box
           px={6}
           py={3}
-          w={{ base: "29%", md: "28%", lg: "28%" }}
+          w={{ base: "35%", md: "28%", lg: "28%" }}
           textAlign={"left"}
         >
           <Text
@@ -405,7 +442,7 @@ const Marketplace = () => {
             {">"} Discover
           </Text>
           {visible === true && (
-            <Box p={3}>
+            <Box p={1}>
               <Text
                 margin={1}
                 onClick={getAllApps}
@@ -580,40 +617,73 @@ const Marketplace = () => {
 
         {/* Right Box Content */}
         <Box minW="73%" p={5}>
-          <Box
-            h={"37vh"}
-            textAlign={"left"}
-            boxShadow="md"
-            p="2"
-            rounded="sm"
-            bg="white"
-          >
-            <Box
-              textColor={"#ffffff"}
-              px={4}
-              py={3}
-              // border={"1px solid red"}
-              h={"22vh"}
-              bg={"#ff8d59"}
-              textAlign={"left"}
-            >
-              <Text fontSize={["xl", "2xl"]}>Connected Sales & Marketing</Text>
-              <Text fontSize={["sm", "md"]}>
-                Connect your marketing and sales apps to deliver an outstanding
-                customer experience.
+          {/*  */}
+          {showSearch === true ? (
+            <Box>
+              <Text fontSize={["xl", "2xl"]}>Search Results</Text>
+              <Text fontSize={["md", "lg"]}>
+                {searchApps.length} of {searchApps.length} results for "{q}" in{" "}
+                {option}
               </Text>
+              <br />
+              <SimpleGrid
+                spacing="10px"
+                columns={{ base: 1, sm: 1, md: 2, lg: 3 }}
+                px={[6, 10, 1]}
+              >
+                {searchApps.map((el) => (
+                  <SearchCompanies
+                    key={el._id}
+                    id={el._id}
+                    name={el.name}
+                    info={el.info}
+                    desc={el.desc}
+                    installs={el.installs}
+                    image={el.image}
+                  />
+                ))}
+              </SimpleGrid>
             </Box>
-            <br />
-            <Button
-              marginLeft={4}
-              rounded={"sm"}
-              textColor={"white"}
-              bg={"#425b76"}
-              colorScheme={"gray"}
+          ) : (
+            <Box
+              h={"37vh"}
+              textAlign={"left"}
+              boxShadow="md"
+              p="2"
+              rounded="sm"
+              bg="white"
             >
-              View App Collection
-            </Button>
-          </Box>
+              <Box
+                textColor={"#ffffff"}
+                px={4}
+                py={3}
+                // border={"1px solid red"}
+                h={"22vh"}
+                bg={"#ff8d59"}
+                textAlign={"left"}
+              >
+                <Text fontSize={["xl", "2xl"]}>
+                  Connected Sales & Marketing
+                </Text>
+                <Text fontSize={["sm", "md"]}>
+                  Connect your marketing and sales apps to deliver an
+                  outstanding customer experience.
+                </Text>
+              </Box>
+              <br />
+              <Button
+                marginLeft={4}
+                rounded={"sm"}
+                textColor={"white"}
+                bg={"#425b76"}
+                colorScheme={"gray"}
+              >
+                View App Collection
+              </Button>
+            </Box>
+          )}
+          {/*  */}
+
           <br />
           {/* Popular apps */}
           {loading === true ? (
