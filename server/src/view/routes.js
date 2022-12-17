@@ -40,9 +40,9 @@ router
     passport.authenticate('facebook', { failureRedirect: '/user/login',session:false}),
     facebookRoute.facebook
   )
-  .get("/products", productRoute.getAllProduct)
-  .get("/products/:id", productRoute.getSingleProduct)
-  .get("/products/add-product/:id", productRoute.addProd)
-  .get("/admin/all-users", adminRoute); // Give middleware adminVerification
+  .get("/products", verifyToken,productRoute.getAllProduct)
+  .get("/products/:id",verifyToken ,productRoute.getSingleProduct)
+  .get("/products/add-product/:id",verifyToken ,productRoute.addProd)
+  .get("/admin/all-users",adminVerification ,adminRoute); // Give middleware adminVerification
 
 module.exports = router;
