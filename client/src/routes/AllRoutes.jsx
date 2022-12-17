@@ -14,9 +14,10 @@ const AllRoutes = () => {
     <Routes>
 
 
+
       <Route path="/" element={<Home />}></Route>
 
-      <Route path="/productdetailsproducts/:id" element={<Productdetails />}></Route>
+      <Route path="/products/:id" element={<Productdetails />}></Route>
       <Route path="/marketplace" element={<Marketplace />}></Route>
 
       <Route path="/login" element={<Login/>}></Route>
@@ -24,6 +25,7 @@ const AllRoutes = () => {
 
       <Route path='/forgetpassword' element={<ForgetPassword/>}></Route>
       <Route path="/otp" element={<Otp/>}></Route>
+
 
 
     </Routes>
