@@ -7,28 +7,29 @@ import {Link, Navigate} from "react-router-dom"
 import { AiOutlineLink } from 'react-icons/ai';
 import {FaInnosoft,FaFacebookSquare} from "react-icons/fa"
 import {BsFillTelephonePlusFill} from "react-icons/bs"
-const Detailsmiddle = () => {
+const Detailsmiddle = ({avatar_url,name,installs}) => {
   return (
     <div className='detailsmiddle'> 
         <div className='details-left'>
             
             <div name="Overview" style={{width:"100%",height:"auto",marginBottom:"70px"}}>
                     <div style={{width:"80%",height:"400px",margin:"auto",display:"flex",flexDirection:"column",justifyContent:"space-between",alignItems:"center"}}>
-                        <img src={context1} width="100%"/>
+                        <img src={avatar_url} width="100%"/>
                     </div>
                     <div style={{width:"95%",margin:"auto",lineHeight:"50px",marginTop:"-10px"}}>
-                          <h1 style={{fontSize:"150%",color:"rgb(96,96,96)"}}>{`${`Gmail`} Integration Overview`}</h1>
+                          <h1 style={{fontSize:"150%",color:"rgb(96,96,96)"}}>{`${name} Integration Overview`}</h1>
                           <div >
-                            <h1 style={{fontWeight:"650"}}>{`Connect your ${"Gmail"} to HubSpot`}</h1>
-                            <p style={{lineHeight:"22px",fontSize:"14px"}}>The Google Calendar two-way integration with HubSpot allows you to simultaneously log a meeting in your CRM, 
+                            <h1 style={{fontWeight:"650"}}>{`Connect your ${name} to HubSpot`}</h1>
+                            <p style={{lineHeight:"22px",fontSize:"14px"}}>
+                              {`The ${name} two-way integration with HubSpot allows you to simultaneously log a meeting in your CRM, 
                                 create a calendar event for that meeting, and send invites to meeting guests. Additionally, 
-                                if you create a meeting event in Google Calendar with a HubSpot contact, 
-                                the event will appear on their contact record timeline.
+                                if you create a meeting event in ${name} with a HubSpot contact, 
+                                the event will appear on their contact record timeline.`}
                             </p>
                           </div>
                           <div>
                           <div>
-                            <h1 style={{fontWeight:"650"}}>{`Use your ${"Gmail"} with HubSpot meetings`}</h1>
+                            <h1 style={{fontWeight:"650"}}>{`Use your ${name} with HubSpot meetings`}</h1>
                             <p style={{lineHeight:"22px",fontSize:"14px"}}>With the meetings tool, you can connect your calendar with HubSpot, 
                                 then your prospects can book a time that works for both of you, without the back-and-forth of email.
                             </p>
@@ -41,10 +42,10 @@ const Detailsmiddle = () => {
                   <h1 style={{fontSize:"150%",color:"rgb(96,96,96)",marginLeft:"19px",lineHeight:"50px"}}>Integration features</h1>
                   <div className='features1'>
                         <div className='features1a'>
-                        <h1 style={{fontWeight:"650"}}>{`Connect your ${"Gmail"} to HubSpot`}</h1>
+                        <h1 style={{fontWeight:"650"}}>{`Connect your ${name} to HubSpot`}</h1>
                             <p style={{lineHeight:"22px",fontSize:"14px"}}>
-                              The Google Calendar two-way integration with HubSpot allows you to simultaneously log a meeting in your CRM, 
-                              create a calendar event for that meeting, and send invites to meeting guests.
+                             {` The ${name} two-way integration with HubSpot allows you to simultaneously log a meeting in your CRM, 
+                              create a calendar event for that meeting, and send invites to meeting guests.`}
                             </p>
                         </div>
                         <div className='features1b'>
@@ -53,7 +54,7 @@ const Detailsmiddle = () => {
                   </div>
                   <div className='features1'>
                         <div className='features1a'>
-                           <h1 style={{fontWeight:"650"}}>{`Use your ${"Gmail"} with HubSpot meetings`}</h1>
+                           <h1 style={{fontWeight:"650"}}>{`Use your ${name} with HubSpot meetings`}</h1>
                              <p style={{lineHeight:"22px",fontSize:"14px"}}>
                               With the meetings tool, you can connect your calendar with HubSpot, then your prospects can book a time that works for both of you, 
                               without the back-and-forth of email.
@@ -69,18 +70,18 @@ const Detailsmiddle = () => {
                   <div style={{width:"95%",margin:"auto",marginBottom:"30px"}}>
                    <h1 style={{fontSize:"150%",color:"rgb(96,96,96)",lineHeight:"50px"}}>Shared data</h1>
                     <div style={{width:"100%",margin:"auto",display:"flex",justifyContent:"space-around",alignItems:"center",background:"rgb(245,245,245)",fontSize:"14px",padding:"12px 0px",border:"1px solid rgb(220,220,220)"}}>
-                        <span>GOOGLE CALENDAR DATA</span>
+                        <span>CALENDAR DATA</span>
                         <span>DATA FLOW</span>
                         <span>HUBSPOT DATA</span>
                     </div>
                     <div style={{width:"100%",margin:"auto",display:"flex",justifyContent:"space-around",alignItems:"center",fontSize:"14px",padding:"20px 0px",border:"1px solid rgb(220,220,220)",borderTop:"1px solid white"}}>
-                    <span>Calendar Meetings</span>
+                    <span> Meetings</span>
                         <span>Arrow</span>
                         <span>Contacts</span>
                     </div>
                   </div>
                   <div style={{width:"95%",margin:"auto",fontSize:"14px"}}>
-                    <h1 style={{fontSize:"150%",lineHeight:"50px"}}>{`${"Gmail"} integrates with these HubSpot features`}</h1>
+                    <h1 style={{fontSize:"150%",lineHeight:"50px"}}>{`${name} integrates with these HubSpot features`}</h1>
                     <h1>CRM</h1>
                     <button style={{border:"1px solid rgb(220,220,220)",background:"rgb(245,245,245)",padding:"4px 8px",marginTop:"5px",fontSize:"100%"}} onClick={()=>{<Navigate to="/nextpage"/>}}>Meetings</button>
                   </div>
@@ -101,7 +102,7 @@ const Detailsmiddle = () => {
              
              <div className='details-right2'>
                 <p>Total installs</p>
-                <p>10,000+</p>
+                <p>{installs}</p>
              </div>
             
              <div className='details-right3'>
@@ -112,7 +113,7 @@ const Detailsmiddle = () => {
              <div className='details-right4'>
                 <p>Features</p>
                 <span className='p-button'><Link to="/home">Appointment Scheduling</Link></span>
-                <span className='p-button' style={{marginLeft:"10px"}}><Link to="/home">Calender Management</Link></span><br/>
+                <span className='p-button' style={{marginLeft:"10px"}}><Link to="/home">Management</Link></span><br/>
                 <span className='p-button'><Link to="/home">Group Scheduling</Link></span>
                 <span className='p-button' style={{marginLeft:"10px"}}><Link to="/home">Online booking</Link></span>
                 <span className='p-button'  style={{marginLeft:"10px"}}><Link to="/home">Real-time Scheduling</Link></span>
@@ -138,14 +139,14 @@ const Detailsmiddle = () => {
                </div>
                 
                <div className='details-right6'>
-                <p style={{fontSize:"14px"}}>Google Calendar Subscription</p>
+                <p style={{fontSize:"14px"}}>{`${name} Subscription`}</p>
                 <p name="Pricing" style={{color:"rgb(70,130,180)"}}>Free plan</p>
                </div>
 
               </div>
 
               <div className='details-right6a'>
-              <h1 style={{fontSize:"150%",marginBottom:"15px"}}>{`HubSpot's ${"Gmail"} App Support`}</h1>
+              <h1 style={{fontSize:"150%",marginBottom:"15px"}}>{`HubSpot's ${name} App Support`}</h1>
               <div className='details-rigth1aa'> <span style={{marginRight:"5px"}}><Link to ="/home"><FaInnosoft size={18}/></Link></span><span style={{paddingRight:"4px",fontWeight:"bold",color:"rgb(70,130,180)"}}>Company website</span></div>
               <div className='details-rigth1aa'> <span style={{marginRight:"5px"}}><Link to ="https://www.facebook.com/hubspot"><FaFacebookSquare size={18}/></Link></span><span style={{paddingRight:"4px",fontWeight:"bold",color:"rgb(70,130,180)"}}>Facebook</span></div>
               <div className='details-rigth1aa'> <span style={{marginRight:"5px"}}><Link to ="tel:+18884827768"><BsFillTelephonePlusFill size={18}/></Link></span><span style={{paddingRight:"4px",fontWeight:"bold",color:"rgb(70,130,180)"}}>+1 (888) 482-7768, ext.3</span></div>
