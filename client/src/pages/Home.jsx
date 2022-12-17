@@ -6,10 +6,12 @@ import HeaderCards from '../components/HeaderCards';
 import HomeimageComponent from '../components/HomeimageComponent';
 import StatsHome from '../components/StatsHome';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   return (
     <div>
+      <Navbar/>
       <HomeimageComponent/>
       <BelowImageText/>
       <HeaderCards/>

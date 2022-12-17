@@ -39,7 +39,8 @@ router
     passport.authenticate('facebook', { failureRedirect: '/user/login',session:false}),
     facebookRoute.facebook
   )
-  .get("/products",  productRoute.getAllProduct)
-  .get("/products/:id", productRoute.getSingleProduct);
+  .get("/products", productRoute.getAllProduct)
+  .get("/products/:id", productRoute.getSingleProduct)
+  .get("/products/add-product/:id", productRoute.addProd);
 
 module.exports = router;

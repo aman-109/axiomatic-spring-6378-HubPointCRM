@@ -1,0 +1,168 @@
+/* .mainsignupflex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+}
+
+.signintext{
+      margin-left: 50%;  
+    padding-right: 2%;
+}
+.signupimage{
+    width: 40%;
+    margin-top: 20%;
+    margin-left: 50%;
+}
+/* .mainflex{
+   
+    justify-content: space-evenly;
+    display: flex;
+} */
+/* .createHead{
+    margin-top: 10%;
+} */ 
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+.signinlink{
+    color: blue;
+    padding-left: 5px;
+    font-weight: 700;
+}
+.bottomflex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.signupimage{
+    width: 20%;
+    margin-left: 40%;
+}
+.leftside{
+    width: 60%;
+    margin: auto;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.createHead{
+    margin-bottom: 1%;
+    text-align: center;
+}
+.buttonvsatck{
+    width: 100%;
+}
+.googlesignup{
+    width: 85%;
+    border-radius: none;
+    color: white;
+    
+}
+.fbsignup{
+    width: 85%;
+    color: white;
+    margin-top: 5%;
+}
+.dividerflex{
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 2%;
+    font-weight: bold;
+}
+.divider1{
+    width: 45%;
+}
+.divider2{
+    width: 45%;
+}
+.dividerText{
+    margin-top: -3%;
+    font-size: 20px;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+.nameInput{
+    border: none;
+    padding: 10px;
+    
+}
+.emailinput{
+    margin-top: 2%;
+    /* margin-left:  -5%; */
+    border-left: 0px;
+    border-right: 0px;
+    width: 100%;
+}
+/* .nextbutton{
+    width: 90%;
+    margin: auto;
+    margin-top: 2%;
+} */
+.inputHStack{
+    width: 100%;
+}
+.emailinput{
+    width: 100%;
+}
+.nextbutton{
+    width: 90%;
+    margin: auto;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 2%;
+    background-color: tomato;
+    color: white;
+}
+.leftsidetext{
+    margin-top: 5%;
+    font-size: 13px;
+    text-align: center;
+}
+@media screen and (max-width:1040px) {
+    .bottomflex{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .signupimage{
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 10%;
+    }
+    .crmhead{
+        text-align: center;
+        /* margin-left: -50px; */
+    }
+    .mainflexsignup{
+        width: 100%;
+        margin: auto;
+    }
+    .leftside{
+       width: 90%;
+        margin: auto;
+    /* margin-top: 3%; */
+    /* margin-left: 10%; */
+    }
+    .crmtext{
+        text-align: center;
+        /* margin-left: -50px; */
+    }
+    .header{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .rightSide{
+        width: 90%;
+        margin: auto;
+    }
+}

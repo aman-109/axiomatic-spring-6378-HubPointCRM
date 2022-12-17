@@ -1,0 +1,62 @@
+.checkboxflex{
+    /* margin-left: 100%; */
+    margin-top: 2%;
+}
+.loginButton{
+    width: 500%;
+    margin-left: 50%;
+
+    /* margin-bottom: 10%; */
+    /* margin-top: 20%; */
+}
+.linksignup{
+    color:blue;
+    padding-left: 5px;
+}
+.divider{
+    /* width: 35%; */
+    margin-top: 10%;
+}
+.bottomvsatck{
+    margin: auto;
+    width: 100%;
+}
+.buttonlogin{
+    width: 100%;
+    margin-top: 10%;
+}
+.bottombox{
+    margin-top: 3%;
+}
+.icons{
+    font-size: 30px;
+   margin-right: 30px;
+}
+.buttongoogle{
+    width: 100%;
+    padding: 20px;
+    color: white;
+}
+.buttonfb{
+       width: 100%;
+       margin-top: 4%;
+       color: white;
+}
+.buttoncont{
+    margin-top: 3%;
+}
+.bottomtext{
+    text-align: center;
+    font-size: 12px;
+    margin-top: 3%;
+}
+.privacytext{
+     text-align: center;
+    font-size: 13px;
+    color: blue;
+    /* margin-top: 1%; */
+}
+.flexbottom{
+    margin-top: 10px;
+}
+
