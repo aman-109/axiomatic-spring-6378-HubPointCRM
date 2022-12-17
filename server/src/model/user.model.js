@@ -15,6 +15,7 @@ const users = new mongoose.Schema({
   purchased_product: [
     { product_id: { type: mongoose.Schema.Types.ObjectId, ref: "product" } },
   ],
+  otp:{type:String,required:true}
 });
 
 const User = mongoose.model("user", users);

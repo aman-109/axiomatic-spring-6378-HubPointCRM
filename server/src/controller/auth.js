@@ -2,22 +2,32 @@ const User = require("../model/user.model");
 const Blacklist = require("../model/blacklist.model");
 const argon2 = require("argon2");
 const jwt = require("jsonwebtoken");
+const { generateOTP } = require("../utils/otp");
+const { sendMail } = require("../utils/mail");
 
 const token_secret = process.env.TOKEN_KEY;
 const refreshToken_secret = process.env.REFRESHTOKEN_KEY;
 
 //Helper functions
 const createUser = async (data) => {
-  let already_exist = await User.findOne({ email: data.email });
-  if (already_exist) {
-    return false;
-  }
+ 
   let hash = await argon2.hash(data.password);
-  let user = await User.create({ ...data, password: hash });
-  if (user) {
-    return true;
-  } else {
+  const otpGenerate=generateOTP()
+  let user = await User.create({ ...data, password: hash,otp:otpGenerate });
+  if (!user) {
+    console.log("first")
     return false;
+  } 
+  try{
+    await sendMail({
+      to: data.email,
+      OTP: otpGenerate,
+    })
+    return true
+  }
+  catch(e){
+    console.log("second")
+    return false
   }
 };
 
@@ -49,6 +59,22 @@ const validateUser = async (data) => {
   }
 };
 
+
+
+const validateWithOtp = async (email, otp) => {
+  const user = await User.findOne({
+    email,
+  });
+  if (!user) {
+    return false;
+  }
+  if (user && user.otp !== otp) {
+    return false;
+  }
+  return true
+};
+
+
 // Route Callback functions
 const getUser = async (req, res) => {
   res.send("Hello server started ");
@@ -57,6 +83,10 @@ const getUser = async (req, res) => {
 // 1. Signup callback
 const signupUser = async (req, res) => {
   let data = req.body;
+  let already_exist = await User.findOne({ email: data.email });
+  if (already_exist) {
+    return res.send({status:false,message:"user already registered"});
+  }
 
   let user = await createUser({ ...data });
   if (user) {
@@ -146,10 +176,46 @@ const getRefreshToken = async (req, res) => {
   }
 };
 
+
+// 5. Verify Email with otp
+const verifyEmail=async (req, res) => {
+  const { email, otp } = req.body;
+  const user = await validateWithOtp(email, otp);
+  if(user){
+
+    res.send({status:user,message:"user verified successfully"});
+  }else{
+    
+    res.send({status:false,message:"otp is invalid"});
+  }
+};
+
+
+//6. forget password
+const forgetPassword=async(req,res)=>{
+  const {email,password}=req.body;
+ const user= await User.findOne({ email});
+ if(!user){
+  return res.send("user not found !")
+}
+if(user && !password ){
+ return res.send("Please Enter New Password")
+
+ }
+ let hash = await argon2.hash(password);
+ const updatedUser = await User.findByIdAndUpdate(user._id, {
+  $set: { password: hash },
+},{new:true});
+
+return res.send({message:"password updated successfully",updatedUser})
+}
+
 module.exports = {
   getUser,
   signupUser,
   loginUser,
   logoutUser,
   getRefreshToken,
+  verifyEmail,
+  forgetPassword
 };
