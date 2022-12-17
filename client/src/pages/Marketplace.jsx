@@ -22,6 +22,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { FaLeaf } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
+import NavbarTwo from "../components/dashboard/Navbar";
 
 const getCompanies = async () => {
   let res = await fetch("http://localhost:8179/products");
@@ -332,6 +333,8 @@ const Marketplace = () => {
   console.log(allcompanies);
 
   return (
+    <>
+    <NavbarTwo/>
     <Container maxW="9xl" bg="#ffffff" centerContent>
       <Box
         py={5}
@@ -1112,6 +1115,7 @@ const Marketplace = () => {
         </Box>
       </Flex>
     </Container>
+    </>
   );
 };
 

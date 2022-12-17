@@ -6,6 +6,7 @@ import Detailsnavbar from '../components/deatils/detailsnavbar'
 import Detailsprice from '../components/deatils/detailsprice'
 import Detailsreview from '../components/deatils/detailsreview';
 import axios from "axios"
+import NavbarTwo from '../components/dashboard/Navbar'
 const Productdetails = () => {
   const {id} = useParams();
   const[details,setDetails]=useState(null);
@@ -26,6 +27,7 @@ const Productdetails = () => {
   console.log(details)
   return (
     <div>
+      <NavbarTwo/>
         <Detailsnavbar {...details}/>
         <Detailsmiddle {...details}/>
         <Detailsprice {...details}/>
