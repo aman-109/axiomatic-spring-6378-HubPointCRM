@@ -13,7 +13,10 @@ const Productdetails = () => {
 
   const fetchDetails = async ()=>{
     try{
-      let {data} = await axios.get(`http://localhost:8179/products/${id}`);
+      let {data} = await axios.get(`https://hubpointserver.onrender.com/products/${id}`,{
+        withCredentials: true,
+        headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+    }});
       setDetails(data)
     }
     catch(err){

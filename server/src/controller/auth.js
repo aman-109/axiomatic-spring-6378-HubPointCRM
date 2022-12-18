@@ -90,7 +90,7 @@ const signupUser = async (req, res) => {
 
   let user = await createUser({ ...data });
   if (user) {
-    return res.send({ status: true, messege: "user created successfully" });
+    return res.send({ status: true,user:data.email, messege: "user created successfully" });
   } else {
     return res.send({ status: false, messege: "wrong details" });
   }

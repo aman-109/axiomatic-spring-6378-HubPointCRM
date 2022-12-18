@@ -25,13 +25,13 @@ import { BsSearch } from "react-icons/bs";
 import NavbarTwo from "../components/dashboard/Navbar";
 
 const getCompanies = async () => {
-  let res = await fetch("http://localhost:8179/products");
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"});
   let data = await res.json();
   //  console.log(data);
   return data;
 };
 const getPopularTypeapps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Popular apps",
   });
   let data = await res.json();
@@ -39,13 +39,13 @@ const getPopularTypeapps = async () => {
   return data;
 };
 const getnewTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", { type: "New apps" });
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, { type: "New apps" });
   let data = await res.json();
   console.log(data);
   return data;
 };
 const getfreeTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Free apps",
   });
   let data = await res.json();
@@ -53,7 +53,7 @@ const getfreeTypeApps = async () => {
   return data;
 };
 const getbuiltbyTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Built by HubSpot",
   });
   let data = await res.json();
@@ -61,7 +61,7 @@ const getbuiltbyTypeApps = async () => {
   return data;
 };
 const getWorkFlowTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Workflow integrations",
   });
   let data = await res.json();
@@ -69,7 +69,7 @@ const getWorkFlowTypeApps = async () => {
   return data;
 };
 const getCustomizeTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Customizable CRM",
   });
   let data = await res.json();
@@ -77,7 +77,7 @@ const getCustomizeTypeApps = async () => {
   return data;
 };
 const getAbmTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Apps for ABM",
   });
   let data = await res.json();
@@ -85,7 +85,7 @@ const getAbmTypeApps = async () => {
   return data;
 };
 const getAutomationTypeApps = async () => {
-  let res = await fetch("http://localhost:8179/products", {
+  let res = await fetch("https://hubpointserver.onrender.com/products",{credentials:"include"}, {
     type: "Apps for ABM",
   });
   let data = await res.json();

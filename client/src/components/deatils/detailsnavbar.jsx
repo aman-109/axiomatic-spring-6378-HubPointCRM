@@ -4,7 +4,41 @@ import gmail from "../../images/gmail.webp";
 import certified from "../../images/certified.webp";
 import {AiOutlineLink} from "react-icons/ai"
 import {Link} from "react-scroll"
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
+import { useToast } from '@chakra-ui/react';
 const Detailsnavbar = ({image,name}) => {
+   const {id}=useParams()
+   const toast=useToast()
+   const navigate=useNavigate()
+   const addProduct=async()=>{
+      try{
+
+         await axios(`https://hubpointserver.onrender.com/products/add-product/${id}`,{
+            withCredentials: true,
+            headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+        }})
+        
+        toaster()
+        setTimeout(()=>{
+         navigate("/")
+        },3000)
+         
+      }catch(e){
+         console.log(e)
+      }
+   }
+
+   const toaster=()=>{
+      return toast({
+        title: 'Service Added Successfully.',
+        description: "Redirecting to HomePage.",
+        status: 'success',
+        duration: 4000,
+        isClosable: true,
+      })
+     }
+  
   return (
     <div className='detailsnavbar'>
        <div className='navbar-left'>
@@ -40,7 +74,7 @@ const Detailsnavbar = ({image,name}) => {
        
        <div className='navbar-rigth' >
           <div className='navbar-rigth1'><div style={{paddingRight:"4px",fontWeight:"bold",color:"rgb(70,130,180)"}}>View setup guide</div> <AiOutlineLink size={20}/></div>
-          <div className='navbar-rigth2'><button style={{width:"100%",backgroundColor:"rgb(255,99,71)",color:"white",padding:"8px",borderRadius:"7px"}}>Install app</button></div>
+          <div className='navbar-rigth2'><button style={{width:"100%",backgroundColor:"rgb(255,99,71)",color:"white",padding:"8px",borderRadius:"7px"}} onClick={addProduct}>Install app</button></div>
        </div>
 
        <div className='navbar-left4' >
