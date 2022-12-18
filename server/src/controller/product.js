@@ -67,7 +67,7 @@ const getSingleProduct = async (req, res) => {
 };
 const addProd = async (req, res) => {
   let { id } = req.params;
-  const token = req.cookies.token;  
+  const token = req.cookies.token;
   let verification = jwt.verify(token, token_secret);
   try {
     let user = await User.findOneAndUpdate(
@@ -82,4 +82,30 @@ const addProd = async (req, res) => {
   }
 };
 
-module.exports = { getAllProduct, getSingleProduct,addProd };
+// Add Product in database
+const addService = async (req, res) => {
+  let data = req.body;
+  try {
+    let prod = await Product.create({ ...data });
+    res
+      .status(200)
+      .send({ stastu: true, message: "Product created successfully" });
+  } catch (e) {
+    res.status(401).send({ status: false, message: "something went wrong" });
+  }
+};
+
+// Delete product
+const deleteService = async (req, res) => {
+  let { id } = req.params;
+  try {
+    let prod = await Product.findOneAndDelete({ _id: id });
+    res
+      .status(200)
+      .send({ stastu: true, message: "Product deleted successfully" });
+  } catch (error) {
+    res.status(401).send({ status: false, message: "something went wrong" });
+  }
+};
+
+module.exports = { getAllProduct, getSingleProduct, addProd, addService,deleteService };
