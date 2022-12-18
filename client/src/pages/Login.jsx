@@ -3,14 +3,15 @@ import React, { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { FiExternalLink } from 'react-icons/fi';
 import { ImFacebook } from 'react-icons/im';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import hub from "../components/assets/Hub point.png";
 import styles from "../Styles/Login.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/auth/auth.actions';
+import axios from 'axios';
 
 const Login = () => {
-
+    const navigate=useNavigate()
      const isAuth = useSelector(store=>store.auth.isAuth)
     const dispatch = useDispatch()
     const [loginCreds , setLoginCreds] = useState({
@@ -26,9 +27,18 @@ const Login = () => {
         })
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async(e) =>{
         e.preventDefault()
-        dispatch(login(loginCreds))
+        let data= await axios.post('https://hubpointserver.onrender.com/user/login',loginCreds,{
+            withCredentials: true,
+            headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+        }})
+        if(data.status != 200 && data.data.status=== false){
+                alert(data.data.message)
+        }
+        else{
+            navigate("/marketplace")
+        }
     }
 
     
@@ -40,7 +50,8 @@ const Login = () => {
                 </VStack>
 
         <Box className={styles.bottombox}>  
-                <FormControl onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
+                <FormControl >
                 <Container className={styles.emailcont}>
                     <FormLabel>Enter Email</FormLabel>
                     <Input 
@@ -60,9 +71,10 @@ const Login = () => {
                     </Flex>
                 </Container>
                 <Container>
-                    <Button disabled={!loginCreds.email || !loginCreds.password} bgColor={'tomato'} color='white' className={styles.buttonlogin}>Log in</Button>
+                    <Button type="submit" disabled={!loginCreds.email || !loginCreds.password} bgColor={'tomato'} color='white' className={styles.buttonlogin}>Log in</Button>
                 </Container>
                 </FormControl>
+                </form>
                 <Container>
                     <Divider className={styles.divider}></Divider>
                 </Container>

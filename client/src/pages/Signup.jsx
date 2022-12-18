@@ -29,10 +29,17 @@ const Signup = () => {
         })
    }
    const handlesubmit = async(e) =>{
+
         e.preventDefault()
-     axios.post("url",signupCreds)
-     .then((res)=>navigate("/login"))
-    .catch((err)=>alert(err.message))
+
+            let data= await axios.post("https://hubpointserver.onrender.com/user/signup",signupCreds)
+        if(data.status != 200){
+            alert(data.data.message)
+        }
+        else{
+            localStorage.setItem("user",JSON.stringify(data.data.user))
+            navigate("/login")
+        }
    }
     return (
 
@@ -61,7 +68,8 @@ const Signup = () => {
                             <Text className={styles.dividerText}>Or</Text>
                             <Divider className={styles.divider2} orientation='horizontal'></Divider>
                         </Flex>
-                         <FormControl onSubmit={handlesubmit}>
+                        <form onSubmit={handlesubmit}>
+                         <FormControl >
                             <Flex><Container className={styles.inputHStack}><Input 
                             onChange={handleChange}
                             value={signupCreds.firstname}
@@ -135,10 +143,11 @@ const Signup = () => {
                             </Input>
                             </Container>
 
-                            <Button disabled={!signupCreds.name || !signupCreds.email || !signupCreds.password || !signupCreds.company_name || !signupCreds.company_website} bgColor={'tomato'} 
+                            <Button type="submit" disabled={!signupCreds.name || !signupCreds.email || !signupCreds.password || !signupCreds.company_name || !signupCreds.company_website} bgColor={'tomato'} 
                             // onClick={handleSubmit}
                             className={styles.nextbutton}>Next<FcNext  fontSize={'20px'}/></Button>
                         </FormControl>
+                        </form>
                     <Text className={styles.leftsidetext}>We’re committed to your privacy. HubSpot uses the information you provide to us to contact you about our relevant content, products, and services. You may unsubscribe from these communications at any time. For more information, check out our Privacy Policy</Text>
 
                 </Box>
