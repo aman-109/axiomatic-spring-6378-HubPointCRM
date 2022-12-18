@@ -31,18 +31,24 @@ router
     }),
     googleRoute.google
   )
-  .get(
-    "/user/auth/facebook",
-    passport.authenticate("facebook")
-  )
+  .get("/user/auth/facebook", passport.authenticate("facebook"))
   .get(
     "/user/auth/facebook/callback",
-    passport.authenticate('facebook', { failureRedirect: '/user/login',session:false}),
+    passport.authenticate("facebook", {
+      failureRedirect: "/user/login",
+      session: false,
+    }),
     facebookRoute.facebook
   )
-  .get("/products", verifyToken,productRoute.getAllProduct)
-  .get("/products/:id",verifyToken ,productRoute.getSingleProduct)
-  .get("/products/add-product/:id",verifyToken ,productRoute.addProd)
-  .get("/admin/all-users",adminVerification ,adminRoute); // Give middleware adminVerification
+  .get("/products", verifyToken, productRoute.getAllProduct)
+  .get("/products/:id", verifyToken, productRoute.getSingleProduct)
+  .get("/products/add-product/:id", verifyToken, productRoute.addProd)
+  .get("/admin/all-users", adminVerification, adminRoute)
+  .post("/admin/add-product", adminVerification, productRoute.addService)
+  .delete(
+    "/admin/delete-product/:id",
+    adminVerification,
+    productRoute.deleteService
+  );
 
 module.exports = router;
