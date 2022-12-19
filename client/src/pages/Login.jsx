@@ -9,6 +9,8 @@ import styles from "../Styles/Login.module.css";
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/auth/auth.actions';
 import axios from 'axios';
+import jwt_decode from 'jwt-decode'
+import jwtDecode from 'jwt-decode';
 
 const Login = () => {
     const navigate=useNavigate()
@@ -37,7 +39,14 @@ const Login = () => {
                 alert(data.data.message)
         }
         else{
-            navigate("/marketplace")
+            let x=jwtDecode(data.data.token)
+            if(x.role !== "admin"){
+
+                navigate("/marketplace")
+            }
+            else{
+                navigate("/admin")
+            }
         }
     }
 

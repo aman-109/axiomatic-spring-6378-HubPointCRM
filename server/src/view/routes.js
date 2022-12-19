@@ -43,10 +43,10 @@ router
   .get("/products", verifyToken, productRoute.getAllProduct)
   .get("/products/:id", verifyToken, productRoute.getSingleProduct)
   .get("/products/add-product/:id", verifyToken, productRoute.addProd)
-  .get("/admin/all-users", adminVerification, adminRoute)
-  .post("/admin/add-product", adminVerification, productRoute.addService)
+  .get("/admin/dashboard", adminVerification, adminRoute)
+  .post("/admin/create-service", adminVerification, productRoute.addService)
   .delete(
-    "/admin/delete-product/:id",
+    "/admin/delete-service/:id",
     adminVerification,
     productRoute.deleteService
   );

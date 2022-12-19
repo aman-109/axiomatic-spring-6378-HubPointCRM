@@ -89,7 +89,7 @@ const addService = async (req, res) => {
     let prod = await Product.create({ ...data });
     res
       .status(200)
-      .send({ stastu: true, message: "Product created successfully" });
+      .send({ status: true,new:prod, message: "Product created successfully" });
   } catch (e) {
     res.status(401).send({ status: false, message: "something went wrong" });
   }
@@ -102,7 +102,7 @@ const deleteService = async (req, res) => {
     let prod = await Product.findOneAndDelete({ _id: id });
     res
       .status(200)
-      .send({ stastu: true, message: "Product deleted successfully" });
+      .send({ status: true, message: "Product deleted successfully" });
   } catch (error) {
     res.status(401).send({ status: false, message: "something went wrong" });
   }

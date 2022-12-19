@@ -115,8 +115,8 @@ const loginUser = async (req, res) => {
       refreshToken_secret,
       { expiresIn: "28 days" }
     );
-     res.status(200).cookie("token", token)
-     .cookie("refreshToken",refreshToken)
+     res.status(200).cookie("token", token,{httpOnly:false,sameSite:"None",secure:true})
+     .cookie("refreshToken",refreshToken,{httpOnly:false,sameSite:"None",secure:true})
      .send({ status: true, token, refreshToken });
   } else {
     return res.send({ status: false, messege: "something went wrong" });
@@ -156,7 +156,7 @@ const getRefreshToken = async (req, res) => {
           }
         );
         
-        return res.status(200).cookie("token",new_token).cookie("refreshToken",token).send({
+        return res.status(200).cookie("token",new_token,{httpOnly:false,sameSite:"None",secure:true}).cookie("refreshToken",token,{httpOnly:false,sameSite:"None",secure:true}).send({
           status: true,
           token: new_token,
           refreshToken: token,
@@ -203,11 +203,11 @@ if(user && !password ){
 
  }
  let hash = await argon2.hash(password);
- const updatedUser = await User.findByIdAndUpdate(user._id, {
+ await User.findByIdAndUpdate(user._id, {
   $set: { password: hash },
 },{new:true});
 
-return res.send({message:"password updated successfully",updatedUser})
+return res.send({message:"password updated successfully"})
 }
 
 module.exports = {

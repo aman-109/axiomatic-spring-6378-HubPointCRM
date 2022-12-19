@@ -8,6 +8,9 @@ import Productdetails from "../pages/Productdetails";
 import Signup from "../pages/Signup";
 import ForgetPassword from "../pages/ForgetPassword";
 import Otp from "../pages/Otp";
+import AdminLogin from "../pages/Admin";
+import AddService from "../components/admin/AddService";
+import Services from "../components/admin/Services";
 
 const AllRoutes = () => {
   return (
@@ -25,6 +28,9 @@ const AllRoutes = () => {
 
       <Route path='/forgetpassword' element={<ForgetPassword/>}></Route>
       <Route path="/otp" element={<Otp/>}></Route>
+      <Route path="/admin" element={<AdminLogin/>}></Route>
+      <Route path="/admin/create_service" element={<AddService/>}></Route>
+      <Route path="/admin/services" element={<Services/>}></Route>
 
 
 
