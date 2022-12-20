@@ -15,3 +15,12 @@ Ground Rules-
 - Always use comments while writing the code
 - Use env for private keys and credentials for security
 - Happy coding !
+
+### Tech Stack:
+ReactJs
+Chakra-ui
+Redux
+MongoDb
+Express
+NodeJs
+Oauth
