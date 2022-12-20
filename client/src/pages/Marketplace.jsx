@@ -320,7 +320,10 @@ const Marketplace = () => {
       return setShowSearch(false);
      
     }
-    let data = await axios.get(`http://localhost:8179/products?q=${q}`);
+    let data = await axios.get(`https://hubpointserver.onrender.com/products?q=${q}`,{
+      withCredentials: true,
+      headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+  }});
 
     setSearchApps(data.data);
   };

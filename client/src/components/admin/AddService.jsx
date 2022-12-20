@@ -87,6 +87,7 @@ console.log(state)
                       <FormLabel>Name</FormLabel>
                       <Input
                         type="text"
+                        autoComplete='off'
                         onChange={handleChange}
                         name="name"
                         value={state.name}
@@ -98,6 +99,7 @@ console.log(state)
                       <FormLabel>Type</FormLabel>
                       <Input
                         type="text"
+                        autoComplete='off'
                         onChange={handleChange}
                         name="type"
                         value={state.type}
@@ -109,6 +111,7 @@ console.log(state)
                   <FormLabel>Service Logo Url</FormLabel>
                   <Input
                     type="text"
+                    autoComplete='off'
                     onChange={handleChange}
                     name="image"
                     value={state.image}
@@ -119,6 +122,7 @@ console.log(state)
 
                   <Input
                     type="text"
+                    autoComplete='off'
                     onChange={handleChange}
                     name="info"
                     value={state.info}
@@ -129,6 +133,7 @@ console.log(state)
 
                   <Input
                     type="text"
+                    autoComplete='off'
                     onChange={handleChange}
                     name="desc"
                     value={state.desc}
@@ -139,6 +144,7 @@ console.log(state)
 
                   <Input
                     type="text"
+                    autoComplete='off'
                     onChange={handleChange}
                     name="installs"
                     value={state.installs}
@@ -149,6 +155,7 @@ console.log(state)
 
                   <Input
                     type="text"
+                    autoComplete='off'
                     onChange={handleChange}
                     name="rating"
                     value={state.rating}

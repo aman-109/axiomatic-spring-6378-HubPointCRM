@@ -31,14 +31,13 @@ const Signup = () => {
    const handlesubmit = async(e) =>{
 
         e.preventDefault()
-
+        try{
             let data= await axios.post("https://hubpointserver.onrender.com/user/signup",signupCreds)
-        if(data.status != 200){
-            alert(data.data.message)
-        }
-        else{
             localStorage.setItem("user",JSON.stringify(data.data.user))
             navigate("/login")
+
+        }catch(e){
+            alert(e.data)
         }
    }
     return (
@@ -58,9 +57,9 @@ const Signup = () => {
                          <Heading className={styles.createHead}>Create your free account</Heading> 
                         <Text textAlign={'center'} padding='10px'>100% free. No credit card needed.</Text>
                     <VStack className={styles.buttonvsatck}>
-                         <Button bgColor={'skyblue'} borderRadius='5px' className={styles.googlesignup}>Signup with Google<FcGoogle fontSize={'25px'} padding='20px' borderRadius='0px'/></Button>
+                        <a href="https://hubpointserver.onrender.com/user/auth/google"> <Button bgColor={'skyblue'} borderRadius='5px' className={styles.googlesignup}>Signup with Google<FcGoogle fontSize={'25px'} padding='20px' borderRadius='0px'/></Button></a>
                         
-                        <Button marginTop={'3%'} bgColor={'darkblue'}  borderRadius='5px' className={styles.fbsignup}>Signup with Facebook<TfiFacebook fontSize={'25px'} padding='20px' borderRadius='0px'/></Button>
+                       <a href="https://hubpointserver.onrender.com/user/auth/facebook"> <Button marginTop={'3%'} bgColor={'darkblue'}  borderRadius='5px' className={styles.fbsignup}>Signup with Facebook<TfiFacebook fontSize={'25px'} padding='20px' borderRadius='0px'/></Button></a>
                     </VStack>
 
                          <Flex className={styles.dividerflex}>
@@ -70,7 +69,9 @@ const Signup = () => {
                         </Flex>
                         <form onSubmit={handlesubmit}>
                          <FormControl >
-                            <Flex><Container className={styles.inputHStack}><Input 
+                            <Flex><Container className={styles.inputHStack}>
+                                <Input
+                                autoComplete='off' 
                             onChange={handleChange}
                             value={signupCreds.firstname}
                             name='name'
@@ -78,23 +79,15 @@ const Signup = () => {
                             borderLeft='0px'
                             borderRight={'0px'}
                             className={styles.nameInput}></Input>
-
-                            {/* <Input
-                            onChange={handleChange}
-                            value={signupCreds.lastname}
-                            name='last name'
-                            borderTop={'0px'} 
-                            borderLeft='0px'
-                            borderRight={'0px'}
-                            placeholder='Last name'className={styles.lastnameInput}>
-                            </Input> */}
                             </Container>
                             </Flex>
 
                             <Container alignItems={'flex-start'}>
                             <Input
+                            autoComplete='off'
                             onChange={handleChange}
                             name='email'
+                            type="email"
                             value={signupCreds.email}
                             placeholder=' Email address'
                               borderTop={'0px'} 
@@ -106,8 +99,10 @@ const Signup = () => {
 
                             <Container alignItems={'flex-start'}>
                             <Input
+                            autoComplete='off'
                             onChange={handleChange}
                             name='password'
+                            type="password"
                             value={signupCreds.password}
                             placeholder=' Enter Password'
                             borderTop={'0px'} 
@@ -119,6 +114,7 @@ const Signup = () => {
 
                             <Container alignItems={'flex-start'}>
                             <Input
+                            autoComplete='off'
                             onChange={handleChange}
                             name='company_name'
                             value={signupCreds.companyName}
@@ -132,6 +128,7 @@ const Signup = () => {
 
                             <Container alignItems={'flex-start'}>
                             <Input
+                            autoComplete='off'
                             onChange={handleChange}
                             name='company_website'
                             value={signupCreds.companyWebsite}

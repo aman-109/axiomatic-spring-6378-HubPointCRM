@@ -65,6 +65,8 @@ const Login = () => {
                     <FormLabel>Enter Email</FormLabel>
                     <Input 
                     name='email'
+                    type="email"
+                    autoComplete='off'
                     value={loginCreds.email}
                     onChange={handleChange}></Input>
                 </Container>
@@ -72,6 +74,8 @@ const Login = () => {
                     <FormLabel>Password</FormLabel>
                     <Input 
                     name='password'
+                    type="password"
+                    autoComplete='off'
                     value={loginCreds.password}
                     onChange={handleChange}></Input>
                     <Flex alignItem='center' justifyContent={'space-between'} marginTop='2%'>
@@ -88,9 +92,9 @@ const Login = () => {
                     <Divider className={styles.divider}></Divider>
                 </Container>
                 <Container className={styles.buttoncont}>
-                    <Button  bgColor={'skyblue'}   className={styles.buttongoogle}><FcGoogle className={styles.icons}/>Signin with Google</Button>
+                    <a href="https://hubpointserver.onrender.com/user/auth/google"><Button  bgColor={'skyblue'}   className={styles.buttongoogle}><FcGoogle className={styles.icons}/>Signin with Google</Button></a>
                     <br/>
-                    <Button bgColor={'darkblue'}  className={styles.buttonfb}><ImFacebook className={styles.icons}/>Signin with Facebook</Button>
+                   <a href="https://hubpointserver.onrender.com/user/auth/facebook"><Button bgColor={'darkblue'}  className={styles.buttonfb}><ImFacebook className={styles.icons}/>Signin with Facebook</Button></a>
                 </Container>
 
                 <Text className={styles.bottomtext}>©2022 HubSpot, Inc. All Rights Reserved.</Text>

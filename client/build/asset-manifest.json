@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4b15a513.css",
+    "main.js": "/static/js/main.6258d424.js",
+    "static/media/signupimage.webp": "/static/media/signupimage.e782a3317397458d50bb.webp",
+    "static/media/Slide3-1.webp": "/static/media/Slide3-1.9aa57139c22e873bcfa6.webp",
+    "static/media/homehuman.webp": "/static/media/homehuman.55eba1f211b27d2be2df.webp",
+    "static/media/context1.webp": "/static/media/context1.5c76edcda391b4b86684.webp",
+    "static/media/Slide2-5.webp": "/static/media/Slide2-5.aa7a86c6291a2f42bcc0.webp",
+    "static/media/headerimg.png": "/static/media/headerimg.d63452f4f26d90abbdbb.png",
+    "static/media/reddit.webp": "/static/media/reddit.f1e603fbec8a03e9abd9.webp",
+    "static/media/momem.webp": "/static/media/momem.d1a2f1f6ff4811e9d5bd.webp",
+    "static/media/certified.webp": "/static/media/certified.0a20810c0ecf655ce461.webp",
+    "static/media/gmail.webp": "/static/media/gmail.1a93253585dcbeb87e14.webp",
+    "static/media/wwf.webp": "/static/media/wwf.aa87965c845cea17ebf7.webp",
+    "static/media/ww.webp": "/static/media/ww.9cd0dc048a01c082f1d9.webp",
+    "static/media/tre.webp": "/static/media/tre.197b052b0eea0b8cf7e1.webp",
+    "static/media/event.webp": "/static/media/event.f74471d9237643aeb61c.webp",
+    "static/media/sound.webp": "/static/media/sound.60044bc0b1f219c6a7c0.webp",
+    "static/media/doorsh.webp": "/static/media/doorsh.91b5f5eb8f08f4819e02.webp",
+    "index.html": "/index.html",
+    "main.4b15a513.css.map": "/static/css/main.4b15a513.css.map",
+    "main.6258d424.js.map": "/static/js/main.6258d424.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b15a513.css",
+    "static/js/main.6258d424.js"
+  ]
+}
