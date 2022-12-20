@@ -1,26 +1,32 @@
 # axiomatic-spring-6378
 
-<h3>Project name - HubPoint.com  
-IA- Aakash
-Team Lead - Aman Mate
+<h3> HubPoint.com  
+Made By -
+  <ul>
+    <li> Aman Mate</li>
+    <li> Rishikesh patil</li>
+    <li> Prasad karde</li>
+    <li> Damanjot singh</li>
+    <li> Salem Basumata</li>
+  </ul>
 </h3>
 
-Ground Rules-
-
-- Stick to node-18v for smooth coding
-- Whenever there's new dependencies get installed, informed memebers to install them (npm install)
-- Before starting to code everytime make git pull
-- Always work in the branches, each day their should be a new branch 
-- Before pushing your code make sure you copy the content(src) to avoid mishappening
-- Always use comments while writing the code
-- Use env for private keys and credentials for security
-- Happy coding !
 
 ### Tech Stack:
-ReactJs
-Chakra-ui
-Redux
-MongoDb
-Express
-NodeJs
-Oauth
+<ul>
+  <li>ReactJs</li>
+  <li>Chakra-ui</li>
+  <li>Redux</li>
+  <li>MongoDb</li>
+  <li>Express</li>
+  <li>NodeJs</li>
+  <li>Oauth</li>
+  </ul>
+
+
+### Working Functionality
+ - Landing page 
+ - Login/signup page with authentication and authorization
+ - Service search/filter
+ - Reviews filtering/search
+ - Admin section
