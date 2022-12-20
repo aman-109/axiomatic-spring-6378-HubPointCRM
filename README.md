@@ -4,9 +4,9 @@
 Made By -
   <ul>
     <li> Aman Mate</li>
-    <li> Rishikesh patil</li>
-    <li> Prasad karde</li>
-    <li> Damanjot singh</li>
+    <li> Rushikesh Patil</li>
+    <li> Prasad Karde</li>
+    <li> Damanjot Singh</li>
     <li> Salem Basumata</li>
   </ul>
 </h3>
