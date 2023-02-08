@@ -1,7 +1,7 @@
 ## About Hubpoint
 - HubPoint is CRM website that provides app services, marketing and ad tools for the website which will divert traffic
 
-[Go Live]()
+[Go Live](hubpoint-aman-109.vercel.app/)
 
 ### Tech Stack:
 - HTML
