@@ -1,4 +1,5 @@
-# axiomatic-spring-6378
+## About Hubpoint
+- HubPoint is CRM website that provides app services, marketing and ad tools for the website which will divert traffic
 
 <h3> HubPoint.com  
 Made By -
@@ -24,7 +25,7 @@ Made By -
   </ul>
 
 
-### Working Functionality
+### Features
  - Landing page 
  - Login/signup page with authentication and authorization
  - Service search/filter
