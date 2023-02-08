@@ -1,33 +1,41 @@
 ## About Hubpoint
 - HubPoint is CRM website that provides app services, marketing and ad tools for the website which will divert traffic
 
-<h3> HubPoint.com  
-Made By -
-  <ul>
-    <li> Aman Mate</li>
-    <li> Rushikesh Patil</li>
-    <li> Prasad Karde</li>
-    <li> Damanjot Singh</li>
-    <li> Salem Basumata</li>
-  </ul>
-</h3>
-
+[Go Live]()
 
 ### Tech Stack:
-<ul>
-  <li>ReactJs</li>
-  <li>Chakra-ui</li>
-  <li>Redux</li>
-  <li>MongoDb</li>
-  <li>Express</li>
-  <li>NodeJs</li>
-  <li>Oauth</li>
-  </ul>
+- HTML
+- CSS
+- React Js
+- Redux
+- Thunk
+- MongoDB
+- Express Js
+- Node Js
+- OAuth
+- JWT
 
 
 ### Features
- - Landing page 
- - Login/signup page with authentication and authorization
- - Service search/filter
- - Reviews filtering/search
- - Admin section
+
+- Home Page
+![home](https://www.linkpicture.com/q/home_21.png)
+
+- Signup Page
+![signup](https://www.linkpicture.com/q/signup.png)
+
+- Signin Page
+![signin](https://www.linkpicture.com/q/signin.png)
+
+- Categories
+![cate](https://www.linkpicture.com/q/catagory.png)
+
+- App Info Page
+![appinfo](https://www.linkpicture.com/q/signleProd.png)
+
+## Creators
+- []()
+- []()
+- []()
+- []()
+- []()
