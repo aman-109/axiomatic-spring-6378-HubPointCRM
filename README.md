@@ -33,9 +33,18 @@
 - App Info Page
 ![appinfo](https://www.linkpicture.com/q/signleProd.png)
 
+## Execution
+
+If you want to run project in your local machine
+
+- Clone respository
+- Open code in VS code
+- Run command `npm install` 
+- Initialize the server by writing `npm start` on Terminal
+
 ## Creators
-- [Rushikesh Patil]()
-- [Aman Mate]()
-- [Salem Basumata]()
-- [Damanjot Singh]()
-- [Prasad Karde]()
+- [Rushikesh Patil](https://github.com/rushi6457)
+- [Aman Mate](https://github.com/aman-109)
+- [Salem Basumata](https://github.com/salemebasumata58)
+- [Damanjot Singh](https://github.com/damanjot6767)
+- [Prasad Karde](https://github.com/PrasadK05)
