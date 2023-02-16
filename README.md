@@ -12,6 +12,7 @@
 - MongoDB
 - Express Js
 - Node Js
+- Passport Js
 - OAuth
 - JWT
 
